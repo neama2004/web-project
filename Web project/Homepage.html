@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergy-Free Supermarket</title>
+    <link rel="stylesheet" href="Homepage.css">
+    <script src="Homepage.js" defer></script>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <button class="close-sidebar" onclick="toggleSidebar()">&#10094;</button>
+        <div class="sidebar-header">
+            <h3>Categories</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#gluten-free" onclick="filterProducts('gluten-free')">Gluten-Free</a></li>
+            <li><a href="#dairy-free" onclick="filterProducts('dairy-free')">Dairy-Free</a></li>
+            <li><a href="#nut-free" onclick="filterProducts('nut-free')">Nut-Free</a></li>
+            <li><a href="#vegan" onclick="filterProducts('vegan')">Vegan</a></li>
+            <li><a href="#organic" onclick="filterProducts('organic')">Organic</a></li>
+        </ul>
+    </aside>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar">
+        <button class="close-cart" onclick="toggleCart()">&#10094;</button>
+        <h3>Shopping Cart</h3>
+        <ul id="cart-items"></ul>
+        <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <button class="open-sidebar" onclick="toggleSidebar()">&#9776;</button>
+        <div class="logo">🌿 Allergy-Free Supermarket</div>
+        <nav>
+            <input type="text" placeholder="Search products..." id="search-bar" oninput="searchProducts()">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <label for="dark-mode-toggle"></label>
+                </li>
+            </ul>
+            <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
+        </nav>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Eat Safe, Shop Smart</h1>
+            <p>Find allergy-friendly food that fits your lifestyle.</p>
+            <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="product-section" id="products">
+        <h2>Our Bestsellers</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://via.placeholder.com/250x250" alt="Gluten-Free Bread">
+                <h3>Gluten-Free Bread</h3>
+                <p>$5.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/250x250" alt="Dairy-Free Milk">
+                <h3>Dairy-Free Milk</h3>
+                <p>$3.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/250x250" alt="Nut-Free Cookies">
+                <h3>Nut-Free Cookies</h3>
+                <p>$4.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/250x250" alt="Vegan Cheese">
+                <h3>Vegan Cheese</h3>
+                <p>$6.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/250x250" alt="Organic Pasta">
+                <h3>Organic Pasta</h3>
+                <p>$4.49</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>Why Choose Us?</h2>
+        <p>Our platform offers allergy-conscious shopping with personalized product recommendations and safety alerts.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Custom Allergy Profiles</h3>
+                <p>Create a profile to filter products based on your allergies.</p>
+            </div>
+            <div class="feature">
+                <h3>Emergency Alerts</h3>
+                <p>Get notified if a product contains hidden allergens.</p>
+            </div>
+            <div class="feature">
+                <h3>Community Reviews</h3>
+                <p>Read reviews from other users with similar dietary needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"This website has made grocery shopping so much easier for me. No more worrying about hidden allergens!"</p>
+                <span>- Sarah L.</span>
+            </div>
+            <div class="testimonial">
+                <p>"I love the personalized recommendations. It saves me so much time!"</p>
+                <span>- John D.</span>
+            </div>
+            <div class="testimonial">
+                <p>"The emergency alerts are a lifesaver. Highly recommend this site!"</p>
+                <span>- Emily R.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Subscribe for Deals</h2>
+        <p>Get the latest news, product updates, and exclusive offers.</p>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="subscribe()">Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Allergy-Free Supermarket | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
