@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Cart</title>
+    <link rel="stylesheet" href="Cart.css" />
+  </head>
+  <body>
+    <h2>Shopping Cart</h2>
+    <h3>Cart Items</h3>
+    <div class="cart-container">
+      <div class="cart-header">
+        <span class="cart_column">Item</span>
+        <span class="cart_column">Price</span>
+        <span class="cart_column">Quantity</span>
+      </div>
+      <div id="cart"></div>
+      <h3>Order Summary</h3>
+      <div class="total">Total: $<span id="total-price">0.00</span></div>
+      <button class="restore-btn" onclick="restoreCart()">
+        Restore All Items
+      </button>
+    </div>
+
+    <script src="Cart.js"></script>
+  </body>
+</html>
