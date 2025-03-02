@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="Cart.css" />
   </head>
   <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">🌿 SafeBites Market</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <!-- Dark/Light Mode Toggle Button -->
+            <div>
+              <span>☀️ 🌑</span>
+              <div>
+                <input type="checkbox" id="dark-mode-toggle" />
+              <label for="dark-mode-toggle" class="dark-mode-label"></label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <h2>Shopping Cart</h2>
     <h3>Cart Items</h3>
     <div class="cart-container">
@@ -22,6 +45,11 @@
         Restore All Items
       </button>
     </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
+    </footer>
 
     <script src="Cart.js"></script>
   </body>

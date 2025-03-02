@@ -1,128 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SafeBites Market</title>
-    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="Homepage.css" />
     <script src="Homepage.js" defer></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
-        <button class="close-sidebar" onclick="toggleSidebar()" aria-label="Close sidebar">&#10094;</button>
-        <div class="sidebar-header">
-            <h3>Categories</h3>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="#gluten-free" onclick="filterProducts('gluten-free')">Gluten-Free</a></li>
-            <li><a href="#dairy-free" onclick="filterProducts('dairy-free')">Dairy-Free</a></li>
-            <li><a href="#nut-free" onclick="filterProducts('nut-free')">Nut-Free</a></li>
-            <li><a href="#vegan" onclick="filterProducts('vegan')">Vegan</a></li>
-            <li><a href="#organic" onclick="filterProducts('organic')">Organic</a></li>
-        </ul>
+      <button
+        class="close-sidebar"
+        onclick="toggleSidebar()"
+        aria-label="Close sidebar"
+      >
+        &#10094;
+      </button>
+      <div class="sidebar-header">
+        <h3>Categories</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#gluten-free" onclick="filterProducts('gluten-free')"
+            >Gluten-Free</a
+          >
+        </li>
+        <li>
+          <a href="#dairy-free" onclick="filterProducts('dairy-free')"
+            >Dairy-Free</a
+          >
+        </li>
+        <li>
+          <a href="#nut-free" onclick="filterProducts('nut-free')">Nut-Free</a>
+        </li>
+        <li><a href="#vegan" onclick="filterProducts('vegan')">Vegan</a></li>
+        <li>
+          <a href="#organic" onclick="filterProducts('organic')">Organic</a>
+        </li>
+      </ul>
     </aside>
 
     <!-- Header -->
     <header>
-        <button class="open-sidebar" onclick="toggleSidebar()" aria-label="Open sidebar">&#9776;</button>
-        <div class="logo">🌿 SafeBites Market</div>
-        <nav>
-            <input type="text" placeholder="Search products..." id="search-bar" oninput="searchProducts()">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <!-- Dark/Light Mode Toggle Button -->
-                    <input type="checkbox" id="dark-mode-toggle">
-                    <label for="dark-mode-toggle" class="dark-mode-label"></label>
-                </li>
-            </ul>
-            <!-- Cart Button with Counter -->
-            <button class="cart-btn" aria-label="Open cart">🛒 <span id="cart-count">0</span></button>
-        </nav>
+      <button
+        class="open-sidebar"
+        onclick="toggleSidebar()"
+        aria-label="Open sidebar"
+      >
+        &#9776;
+      </button>
+      <div class="logo">🌿 SafeBites Market</div>
+      <nav>
+        <input
+          type="text"
+          placeholder="Search products..."
+          id="search-bar"
+          oninput="searchProducts()"
+        />
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <!-- Dark/Light Mode Toggle Button -->
+            <div>
+              <span>☀️ 🌑</span>
+              <div>
+                <input type="checkbox" id="dark-mode-toggle" />
+                <label for="dark-mode-toggle" class="dark-mode-label"></label>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- Cart Button with Counter -->
+        <button class="cart-btn" aria-label="Open cart">
+          🛒 <span id="cart-count">0</span>
+        </button>
+      </nav>
     </header>
 
     <!-- Hero Banner Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Eat Safe, Shop Smart</h1>
-            <p>Find allergy-friendly food that fits your lifestyle.</p>
-            <button class="btn" onclick="scrollToProducts()">Shop Now</button>
-        </div>
+      <div class="hero-content">
+        <h1>Eat Safe, Shop Smart</h1>
+        <p>Find allergy-friendly food that fits your lifestyle.</p>
+        <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+      </div>
     </section>
 
     <!-- Product Grid Section -->
     <section class="product-section" id="products">
-        <h2>Our Bestsellers</h2>
-        <div class="product-grid">
-            <!-- Products will be dynamically added here -->
-        </div>
+      <h2>Our Bestsellers</h2>
+      <div class="product-grid">
+        <!-- Products will be dynamically added here -->
+      </div>
     </section>
 
     <!-- About Section -->
-<section class="about" id="about">
-    <h2>Why Choose Us?</h2>
-    <p class="about-subtitle">Discover the benefits of shopping with SafeBites Market.</p>
-    <div class="features">
+    <section class="about" id="about">
+      <h2>Why Choose Us?</h2>
+      <p class="about-subtitle">
+        Discover the benefits of shopping with SafeBites Market.
+      </p>
+      <div class="features">
         <div class="feature-card">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/1995/1995485.png" alt="Custom Allergy Profiles">
-            </div>
-            <h3>Custom Allergy Profiles</h3>
-            <p>Create a profile to filter products based on your allergies and dietary needs.</p>
+          <div class="feature-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1995/1995485.png"
+              alt="Custom Allergy Profiles"
+            />
+          </div>
+          <h3>Custom Allergy Profiles</h3>
+          <p>
+            Create a profile to filter products based on your allergies and
+            dietary needs.
+          </p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Emergency Alerts">
-            </div>
-            <h3>Emergency Alerts</h3>
-            <p>Get notified instantly if a product contains hidden allergens.</p>
+          <div class="feature-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+              alt="Emergency Alerts"
+            />
+          </div>
+          <h3>Emergency Alerts</h3>
+          <p>Get notified instantly if a product contains hidden allergens.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/3081/3081557.png" alt="Community Reviews">
-            </div>
-            <h3>Community Reviews</h3>
-            <p>Read reviews from other users with similar dietary restrictions.</p>
+          <div class="feature-icon">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3081/3081557.png"
+              alt="Community Reviews"
+            />
+          </div>
+          <h3>Community Reviews</h3>
+          <p>
+            Read reviews from other users with similar dietary restrictions.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-carousel">
-            <div class="testimonial">
-                <p>"This website has made grocery shopping so much easier for me. No more worrying about hidden allergens!"</p>
-                <span>- Sarah L.</span>
-            </div>
-            <div class="testimonial">
-                <p>"I love the personalized recommendations. It saves me so much time!"</p>
-                <span>- John D.</span>
-            </div>
-            <div class="testimonial">
-                <p>"The emergency alerts are a lifesaver. Highly recommend this site!"</p>
-                <span>- Emily R.</span>
-            </div>
+      <h2>What Our Customers Say</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial">
+          <p>
+            "This website has made grocery shopping so much easier for me. No
+            more worrying about hidden allergens!"
+          </p>
+          <span>- Sarah L.</span>
         </div>
+        <div class="testimonial">
+          <p>
+            "I love the personalized recommendations. It saves me so much time!"
+          </p>
+          <span>- John D.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            "The emergency alerts are a lifesaver. Highly recommend this site!"
+          </p>
+          <span>- Emily R.</span>
+        </div>
+      </div>
     </section>
 
     <!-- Newsletter Section -->
     <section class="newsletter">
-        <h2>Subscribe for Deals</h2>
-        <p>Get the latest news, product updates, and exclusive offers.</p>
-        <input type="email" id="email" placeholder="Enter your email">
-        <button onclick="subscribe()">Subscribe</button>
+      <h2>Subscribe for Deals</h2>
+      <p>Get the latest news, product updates, and exclusive offers.</p>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button onclick="subscribe()">Subscribe</button>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
+      <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
     </footer>
-
-</body>
+  </body>
 </html>

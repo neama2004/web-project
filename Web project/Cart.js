@@ -1,7 +1,32 @@
+// ===================== Dark Mode Toggle =====================
+document.getElementById("dark-mode-toggle").addEventListener("change", function () {
+    const isDarkMode = this.checked;
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode);
+});
+
+// Load dark mode preference on page load
+window.addEventListener("load", function () {
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    document.getElementById("dark-mode-toggle").checked = isDarkMode;
+    document.body.classList.toggle("dark-mode", isDarkMode);
+});
+
+
+
+
+
+
 let defaultCart = [
     { name: 'Cookies 1', price: 10, quantity: 1, image: 'item1.jpg' },
     { name: 'Cookies 2', price: 15, quantity: 1, image: 'item2.jpg' },
-    { name: 'Cookies 3', price: 20, quantity: 1, image: 'item3.jpg' }
+    { name: 'Cookies 3', price: 20, quantity: 1, image: 'item3.jpg' },
+    { name: 'Cookies 2', price: 5, quantity: 10, image: 'item2.jpg' },
+    { name: 'Cookies 3', price: 20, quantity: 2, image: 'item3.jpg' },
+    { name: 'Cookies 2', price: 15, quantity: 6, image: 'item2.jpg' },
+    { name: 'Cookies 3', price: 20, quantity: 7, image: 'item3.jpg' },
+    { name: 'Cookies 2', price: 15, quantity: 9, image: 'item2.jpg' },
+    { name: 'Cookies 3', price: 20, quantity: 10, image: 'item3.jpg' }
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [...defaultCart];
