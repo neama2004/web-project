@@ -66,6 +66,10 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+#afterHeader{
+    margin-top: 100px;
+}
+
 
 /* ===================== Dark/Light Mode Toggle ===================== */
 #dark-mode-toggle {
@@ -152,6 +156,8 @@ footer {
 .cart-container {
     background: white;
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 .cart_column {
     border-bottom: 2px solid black;
