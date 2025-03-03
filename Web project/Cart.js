@@ -51,7 +51,7 @@ function displayCart() {
             <p class="cart-details" id="prc">$${item.price}</p>
             <div class="cart-actions">
                 <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
-                <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                <button class="remove-btn" onclick="removeItem(${index})">🗑️</button>
             </div>
         `;
         cartContainer.appendChild(itemEl);
@@ -60,7 +60,7 @@ function displayCart() {
 }
 
 function updateQuantity(index, value) {
-    cart[index].quantity = parseInt(value) || 1;
+    cart[index].quantity = value || 1;
     saveCart();
     displayCart();
 }
