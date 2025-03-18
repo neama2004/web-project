@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", function () {
+    
+      cards.forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.remove("active");
+        }
+      });
+
+      card.classList.toggle("active");
+    });
+  });
+});
+
 document.addEventListener("scroll", function () {
   const backToTopButton = document.getElementById("backtotop");
   if (window.scrollY > 300) {
