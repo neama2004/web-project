@@ -1,16 +1,4 @@
-// ===================== Dark Mode Toggle =====================
-document.getElementById("dark-mode-toggle").addEventListener("change", function () {
-    const isDarkMode = this.checked;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-    localStorage.setItem("darkMode", isDarkMode);
-});
 
-// Load dark mode preference on page load
-window.addEventListener("load", function () {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    document.getElementById("dark-mode-toggle").checked = isDarkMode;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-});
 
 
 
@@ -41,18 +29,34 @@ function displayCart() {
     cartContainer.innerHTML = '';
     let totalPrice = 0;
     
+
+
     cart.forEach((item, index) => {
         totalPrice += item.price * item.quantity;
-        const itemEl = document.createElement('div');
+        let itemEl = document.createElement('div');
         itemEl.className = 'cart-item';
         itemEl.innerHTML = `
+
             <a href="#"><img src="./images/${item.image}" alt="${item.name}"></a>
-            <p class="cart-details"><a href="#">${item.name}</a></p>
-            <p class="cart-details" id="prc">$${item.price}</p>
-            <div class="cart-actions">
-                <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+            <p class="cart-details" id='item_cart'>
+                <a href="#">${item.name}</a>
+            </p>
+
+            <div class="cart-details"><p class="cart-details" id="price_cart">$${item.price}</p></div>
+
+            
+                <div class="cart-details" id= "quantity_cart">
+                    <button class = "pmbtn" onclick="updateQuantity(${index}, ${item.quantity + 1})"> + </button>
+                    <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></input>
+                    <button class = "pmbtn" onclick="updateQuantity(${index}, ${item.quantity - 1})"> - </button>
+                </div>
+            
+
+            <p class="cart-details" id="total_cart">$${item.price*item.quantity}
                 <button class="remove-btn" onclick="removeItem(${index})">🗑️</button>
-            </div>
+            </p>
+            
+            
         `;
         cartContainer.appendChild(itemEl);
     });
