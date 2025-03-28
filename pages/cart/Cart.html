@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Cart</title>
+    <link rel="stylesheet" href="Cart.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span> SafeBites Market</span>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="user-profile">
+          <a href="#" id="profile-link">
+            <img
+              src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
+              alt="User Profile"
+              id="img"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="afterHeader">
+      <h2>Shopping Cart</h2>
+      <h3>Cart Items</h3>
+
+      <div class="cart-container">
+        <div id="cart-items">
+          <div class="cart-header">
+            <span class="cart_column" id="item_col">Item</span>
+            <span class="cart_column" id="price_col">Price</span>
+            <span class="cart_column" id="quantity_col">Quantity</span>
+            <span class="cart_column" id="total_col">Total Price</span>
+          </div>
+          <div id="cart"></div>
+        </div>
+
+        <div id="totalOrder">
+          <h3 style="margin-top: 10px">Order Summary</h3>
+          <div class="total">Total: $<span id="total-price">0.00</span></div>
+          <button class="restore-btn" onclick="restoreCart()">
+            Restore All Items
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
+    </footer>
+
+    <script src="Cart.js"></script>
+  </body>
+</html>
