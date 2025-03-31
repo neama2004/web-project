@@ -180,15 +180,24 @@ input::-webkit-inner-spin-button {
 }
 #quantity_cart{
     width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
 }
 #total_cart{
     width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.pmbtn{
+.pmbtn {
     background-color: white;
     border-radius: 50px;
-    width: 40px;
+    width: 50px;
+    font-size: 20px;
+    padding: 3px;
 }
 
 .cart_column {
@@ -230,10 +239,11 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
     width: 60px;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 14px;
 }
 
 .remove-btn, .restore-btn {
@@ -246,6 +256,7 @@ input[type="number"] {
 .remove-btn {
     color: #333;
     border: none;
+    margin-bottom: 4px;
 }
 .restore-btn {
     color: green;

@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SafeBites Market</title>
-    <link rel="stylesheet" href="homepage.css" />
-    <script src="homepage.js" defer></script>
+    <title>SafeBites Market - Products</title>
+    <link rel="stylesheet" href="products.css" />
+    <script src="products.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -59,95 +59,58 @@
       </div>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Eat Safe, Shop Smart</h1>
-        <p>Find allergy-friendly food that fits your lifestyle.</p>
-        <button class="btn" onclick="window.location.href='ProductsPage.html'">
-          Shop Now
-        </button>
+    <!-- Product Filters and Sorting -->
+    <section class="product-controls">
+      <div class="filters">
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter" onchange="filterProducts()">
+          <option value="all">All</option>
+          <option value="gluten-free">Gluten-Free</option>
+          <option value="dairy-free">Dairy-Free</option>
+          <option value="nut-free">Nut-Free</option>
+          <option value="vegan">Vegan</option>
+          <option value="organic">Organic</option>
+        </select>
+      </div>
+      <div class="sorting">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by" onchange="sortProducts()">
+          <option value="price-low-to-high">Price: Low to High</option>
+          <option value="price-high-to-low">Price: High to Low</option>
+          <option value="name-a-to-z">Name: A to Z</option>
+          <option value="name-z-to-a">Name: Z to A</option>
+        </select>
       </div>
     </section>
 
-    <!-- Product Grid Section -->
-    <section class="product-section" id="products">
-      <h2>Our Bestsellers</h2>
+    <!-- Product Grid -->
+    <section class="product-section">
+      <h2>Our Products</h2>
       <div class="product-grid">
         <!-- Products will be dynamically added here -->
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-      <h2>Why Choose Us?</h2>
-      <p class="about-subtitle">
-        Discover the benefits of shopping with SafeBites Market.
-      </p>
-      <div class="features">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1995/1995485.png"
-              alt="Custom Allergy Profiles"
-            />
-          </div>
-          <h3>Custom Allergy Profiles</h3>
-          <p>
-            Create a profile to filter products based on your allergies and
-            dietary needs.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
-              alt="Emergency Alerts"
-            />
-          </div>
-          <h3>Emergency Alerts</h3>
-          <p>Get notified instantly if a product contains hidden allergens.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3081/3081557.png"
-              alt="Community Reviews"
-            />
-          </div>
-          <h3>Community Reviews</h3>
-          <p>
-            Read reviews from other users with similar dietary restrictions.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Pagination -->
+    <div class="pagination">
+      <button id="prev-page" onclick="prevPage()">Previous</button>
+      <span id="page-info">Page 1 of 3</span>
+      <button id="next-page" onclick="nextPage()">Next</button>
+    </div>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonial-carousel">
-        <div class="testimonial">
-          <p>
-            "This website has made grocery shopping so much easier for me. No
-            more worrying about hidden allergens!"
-          </p>
-          <span>- Sarah L.</span>
-        </div>
-        <div class="testimonial">
-          <p>
-            "I love the personalized recommendations. It saves me so much time!"
-          </p>
-          <span>- John D.</span>
-        </div>
-        <div class="testimonial">
-          <p>
-            "The emergency alerts are a lifesaver. Highly recommend this site!"
-          </p>
-          <span>- Emily R.</span>
-        </div>
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Product Image" />
+        <h2 id="modal-name"></h2>
+        <p id="modal-price"></p>
+        <p id="modal-description"></p>
+        <button class="add-to-cart" onclick="addToCartFromModal()">
+          Add to Cart
+        </button>
       </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer
@@ -242,5 +205,8 @@
         <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
       </div>
     </footer>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>

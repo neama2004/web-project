@@ -37,7 +37,7 @@ function displayCart() {
         itemEl.className = 'cart-item';
         itemEl.innerHTML = `
 
-            <a href="#"><img src="./images/${item.image}" alt="${item.name}"></a>
+            <a href="#"><img src="../../images/cart/${item.image}" alt="${item.name}"></a>
             <p class="cart-details" id='item_cart'>
                 <a href="#">${item.name}</a>
             </p>
