@@ -184,6 +184,8 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     gap: 10px;
     align-items: center;
+    margin-left: 0;
+    margin-right: 40px;
 }
 #total_cart{
     width: 30%;
@@ -365,4 +367,28 @@ input[type="number"] {
 }
 .dark-mode #totalOrder{
     border: #f3f3f3 1px solid;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #cart-items, #totalOrder {
+        width: 100%;
+        margin: 0;
+    }
+    .cart-header, .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cart-item img {
+        width: 80px;
+        height: 80px;
+    }
+    input[type="number"] {
+        width: 50px;
+    }
 }
