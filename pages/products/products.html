@@ -1,212 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SafeBites Market - Products</title>
-    <link rel="stylesheet" href="products.css" />
-    <script src="products.js" defer></script>
-  </head>
-  <body>
-    <!-- Header -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeBites Products</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
     <header>
-      <div id="header-container">
-        <a
-          href="homepage.html"
-          style="text-decoration: none; color: black"
-          class="logo"
-          >🌿 SafeBites Market</a
-        >
-        <nav>
-          <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="../products/products.html">Products</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../contact/contact.html">Contact</a></li>
-            <li>
-              <!-- Dark/Light Mode Toggle Button -->
-              <div class="theme-toggle">
-                <input type="checkbox" id="dark-mode-toggle" />
-                <label for="dark-mode-toggle" class="dark-mode-label">
-                  <span>☀️</span>
-                  <span>🌑</span>
-                </label>
-              </div>
-            </li>
-            <!-- Cart Button with Counter -->
-            <button class="cart-btn" aria-label="Open cart">
-              🛒 <span id="cart-count">0</span>
-            </button>
-          </ul>
-          <div id="search-container">
-            <input
-              type="text"
-              placeholder="Search products..."
-              id="search-bar"
-              oninput="searchProducts()"
-            />
-            <div class="user-profile">
-              <a href="../login/login.html" id="profile-link">
-                <img
-                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
-                  alt="User Profile"
-                  id="img"
-                />
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
+        <div class="headercontent">
+        <div id="logo">
+            🍏SafeBites Market 
+        </div>
+        <div id="navbar">
+       <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+       </ul>
+    </div>
+    <div id="icon-container">
+        <a href="cart.html" id="cart-icon" >
+            🛒
+        </a>
+        <a href="#" id="profile-link">
+            <img src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg" alt="User Profile" id="img">
+        </a>
+    </div>
+    </div>
     </header>
-
-    <!-- Product Filters and Sorting -->
-    <section class="product-controls">
-      <div class="filters">
-        <label for="category-filter">Filter by Category:</label>
-        <select id="category-filter" onchange="filterProducts()">
-          <option value="all">All</option>
-          <option value="gluten-free">Gluten-Free</option>
-          <option value="dairy-free">Dairy-Free</option>
-          <option value="nut-free">Nut-Free</option>
-          <option value="vegan">Vegan</option>
-          <option value="organic">Organic</option>
-        </select>
-      </div>
-      <div class="sorting">
-        <label for="sort-by">Sort by:</label>
-        <select id="sort-by" onchange="sortProducts()">
-          <option value="price-low-to-high">Price: Low to High</option>
-          <option value="price-high-to-low">Price: High to Low</option>
-          <option value="name-a-to-z">Name: A to Z</option>
-          <option value="name-z-to-a">Name: Z to A</option>
-        </select>
-      </div>
-    </section>
-
-    <!-- Product Grid -->
-    <section class="product-section">
-      <h2>Our Products</h2>
-      <div class="product-grid">
-        <!-- Products will be dynamically added here -->
-      </div>
-    </section>
-
-    <!-- Pagination -->
-    <div class="pagination">
-      <button id="prev-page" onclick="prevPage()">Previous</button>
-      <span id="page-info">Page 1 of 3</span>
-      <button id="next-page" onclick="nextPage()">Next</button>
+    <div id="p">
+    <p>🚫 Allergens. ✅ Flavor. Welcome to worry-free shopping at SafeBites!</p>
     </div>
-
-    <!-- Product Details Modal -->
-    <div id="product-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
-        <img id="modal-image" src="" alt="Product Image" />
-        <h2 id="modal-name"></h2>
-        <p id="modal-price"></p>
-        <p id="modal-description"></p>
-        <button class="add-to-cart" onclick="addToCartFromModal()">
-          Add to Cart
-        </button>
-      </div>
+    
+    <div class="container">
+        <aside id="sidebar">
+            <h2>Filter Products</h2>
+            <ul id="filterlist">
+                <li id="active" data-filter="all">All Products</li>
+                <li data-filter="Dairy">Dairy Free</li>
+                <li data-filter="Gluten">Gluten Free</li>
+                <li data-filter="Nuts">Nuts Free</li>
+                <li data-filter="Soy">Soy Free</li>
+                <li data-filter="Egg">Egg Free</li>
+            </ul>
+        </aside>
+        <main class="productlist"></main>
     </div>
+        
 
-    <!-- Footer -->
-    <footer
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 20px;
-        background-color: #333;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          gap: 20px;
-          background-color: #333;
-        "
-      >
-        <div class="col">
-          <a href="../contact/contact.html">Contact</a>
+        <div class="productmodal">
+        <div id="modalcontent">
+            <span class="close" onclick="closeModal()">&times;</span>
+             <h3 id="modalname"></h3>
+             <img id="modalimage" src="" alt="">
+             <p id="modaldescription"></p>
+             <p id="modalprice"></p>
+             <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
         </div>
+    </div>
+    
+    <footer>
 
-        <div class="col">
-          <h4>About</h4>
-          <a href="../about.html/#">Who We Are?</a>
-          <a href="../about.html/#">Our Mission</a>
-          <a href="../about.html/#">Our Vision</a>
-          <a href="../about.html/#">Terms & Conditions</a>
-          <a href="../about.html/#">Why Us?</a>
-        </div>
-
-        <div class="col">
-          <a href="../login.html">Login</a>
-        </div>
-
-        <div class="col">
-          <h4>Socials</h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              gap: 5px;
-              margin: 0;
-              justify-content: center;
-              flex-direction: row;
-            "
-          >
-            <li>
-              <a href="https://www.facebook.com/"
-                ><img src="../../images/icons/facebook.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/"
-                ><img src="../../images/icons/insta.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/"
-                ><img src="../../images/icons/linkedin.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/"
-                ><img src="../../images/icons/yt.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="mailto:test@gmail.com" style="font-size: 1.5rem">✉️</a>
-            </li>
-            <li><a href="tel:+96145672562" style="font-size: 1.5rem">📞</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <section class="newsletter">
-          <h2>Subscribe for Deals</h2>
-          <p>Get the latest news, product updates, and exclusive offers.</p>
-          <input type="email" id="email" placeholder="Enter your email" />
-          <button onclick="subscribe()">Subscribe</button>
-        </section>
-
-        <button
-          class="contact-btn"
-          onclick="window.location.href='../contact/contact.html'"
-        >
-          Contact Us
-        </button>
-        <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
-      </div>
     </footer>
-
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </body>
+    <script src="products.js"></script>
+</body>
 </html>
