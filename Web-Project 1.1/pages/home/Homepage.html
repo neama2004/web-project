@@ -11,12 +11,8 @@
     <!-- Header -->
     <header>
       <div id="header-container">
-        <a
-          href="homepage.html"
-          style="text-decoration: none; color: black"
-          class="logo"
-          >🌿 SafeBites Market</a
-        >
+        <a href="homepage.html" style="text-decoration: none; color: black" class="logo"
+          >🌿 SafeBites Market</a>
         <nav>
           <ul>
             <li><a href="homepage.html">Home</a></li>
@@ -24,7 +20,6 @@
             <li><a href="../about/about.html">About</a></li>
             <li><a href="../contact/contact.html">Contact</a></li>
             <li>
-              <!-- Dark/Light Mode Toggle Button -->
               <div class="theme-toggle">
                 <input type="checkbox" id="dark-mode-toggle" />
                 <label for="dark-mode-toggle" class="dark-mode-label">
@@ -33,28 +28,34 @@
                 </label>
               </div>
             </li>
-            <!-- Cart Button with Counter -->
-            <button class="cart-btn" aria-label="Open cart">
+            <button class="cart-btn" aria-label="Open cart" onclick="window.location.href='../cart/Cart.html'">
               🛒 <span id="cart-count">0</span>
             </button>
+            <li class="user-profile-container">
+              <div class="user-profile-trigger">
+                <img src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg" 
+                     alt="User Profile" 
+                     class="profile-icon"/>
+              </div>
+              <div class="user-profile-sidebar">
+                <div class="sidebar-header">
+                  <h3>My Account</h3>
+                  <button class="close-sidebar">&times;</button>
+                </div>
+                <ul class="sidebar-menu">
+                  <li><a href="../login/login.html">Login</a></li>
+                  <li><a href="../user/profile.html">Profile</a></li>
+                  <li><a href="../user/orders.html">My Orders</a></li>
+                  <li><a href="../user/settings.html">Settings</a></li>
+                  <li><a href="../user/wishlist.html">Wishlist</a></li>
+                  <li><a href="../help/faq.html">Help Center</a></li>
+                </ul>
+                <div class="sidebar-footer">
+                  <button class="logout-btn">Logout</button>
+                </div>
+              </div>
+            </li>
           </ul>
-          <div id="search-container">
-            <input
-              type="text"
-              placeholder="Search products..."
-              id="search-bar"
-              oninput="searchProducts()"
-            />
-            <div class="user-profile">
-              <a href="../login/login.html" id="profile-link">
-                <img
-                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
-                  alt="User Profile"
-                  id="img"
-                />
-              </a>
-            </div>
-          </div>
         </nav>
       </div>
     </header>
@@ -64,7 +65,7 @@
       <div class="hero-content">
         <h1>Eat Safe, Shop Smart</h1>
         <p>Find allergy-friendly food that fits your lifestyle.</p>
-        <button class="btn" onclick="window.location.href='ProductsPage.html'">
+        <button class="btn" onclick="window.location.href='../products/products.html'">
           Shop Now
         </button>
       </div>
@@ -150,96 +151,55 @@
     </section>
 
     <!-- Footer -->
-    <footer
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 20px;
-        background-color: #333;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          gap: 20px;
-          background-color: #333;
-        "
-      >
-        <div class="col">
-          <a href="../contact/contact.html">Contact</a>
+    <footer>
+      <div class="footer-wave"></div>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+          </ul>
         </div>
-
-        <div class="col">
-          <h4>About</h4>
-          <a href="../about.html/#">Who We Are?</a>
-          <a href="../about.html/#">Our Mission</a>
-          <a href="../about.html/#">Our Vision</a>
-          <a href="../about.html/#">Terms & Conditions</a>
-          <a href="../about.html/#">Why Us?</a>
+        
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="../help/faq.html">FAQ</a></li>
+            <li><a href="../help/shipping.html">Shipping Policy</a></li>
+            <li><a href="../help/returns.html">Return Policy</a></li>
+            <li><a href="../help/privacy.html">Privacy Policy</a></li>
+            <li><a href="../help/terms.html">Terms of Service</a></li>
+          </ul>
         </div>
-
-        <div class="col">
-          <a href="../login.html">Login</a>
+        
+        <div class="footer-col">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="../user/profile.html">My Profile</a></li>
+            <li><a href="../user/orders.html">Order History</a></li>
+            <li><a href="../user/wishlist.html">Wishlist</a></li>
+            <li><a href="../user/settings.html">Account Settings</a></li>
+            <li><a href="../newsletter.html">Newsletter</a></li>
+          </ul>
         </div>
-
-        <div class="col">
-          <h4>Socials</h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              gap: 5px;
-              margin: 0;
-              justify-content: center;
-              flex-direction: row;
-            "
-          >
-            <li>
-              <a href="https://www.facebook.com/"
-                ><img src="../../images/icons/facebook.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/"
-                ><img src="../../images/icons/insta.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/"
-                ><img src="../../images/icons/linkedin.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/"
-                ><img src="../../images/icons/yt.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="mailto:test@gmail.com" style="font-size: 1.5rem">✉️</a>
-            </li>
-            <li><a href="tel:+96145672562" style="font-size: 1.5rem">📞</a></li>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="mailto:info@safebites.com">info@safebites.com</a></li>
+            <li>123 Allergy-Free St, Foodville</li>
+            <li>Open 9AM-6PM Mon-Fri</li>
           </ul>
         </div>
       </div>
-
-      <div>
-        <section class="newsletter">
-          <h2>Subscribe for Deals</h2>
-          <p>Get the latest news, product updates, and exclusive offers.</p>
-          <input type="email" id="email" placeholder="Enter your email" />
-          <button onclick="subscribe()">Subscribe</button>
-        </section>
-
-        <button
-          class="contact-btn"
-          onclick="window.location.href='../contact/contact.html'"
-        >
-          Contact Us
-        </button>
-        <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span class="footer-year">2025</span> SafeBites Market. All rights reserved.</p>
+        <p>Made with ❤️ for allergy-conscious consumers</p>
       </div>
     </footer>
   </body>
