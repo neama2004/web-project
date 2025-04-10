@@ -1,10 +1,13 @@
 let tasksStorage = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-
 let defaultCart = [
   { name: "Cookies 1", price: 10, quantity: 1, image: "item1.jpg" },
-  { name: "Cookies 2", price: 15, quantity: 1, image: "item2.jpg" },
+  {
+    name: "Lorem, ipsumfuga d eaque unde fugi cumque quo!",
+    price: 15,
+    quantity: 1,
+    image: "item2.jpg",
+  },
   { name: "Cookies 3", price: 20, quantity: 1, image: "item3.jpg" },
   { name: "Cookies 2", price: 5, quantity: 10, image: "item2.jpg" },
   { name: "Cookies 3", price: 20, quantity: 2, image: "item3.jpg" },
@@ -14,7 +17,7 @@ let defaultCart = [
   { name: "Cookies 3", price: 20, quantity: 10, image: "item3.jpg" },
 ];
 
-//localStorage.setItem("cart", JSON.stringify(defaultCart));
+localStorage.setItem("cart", JSON.stringify(defaultCart));
 //console.log({ task: "", date: "", completed: false });
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [...tasksStorage];
@@ -34,17 +37,15 @@ function displayCart() {
     let itemEl = document.createElement("div");
     itemEl.className = "cart-item";
     itemEl.innerHTML = `
-        
-            <a href="#"><img src="../../images/cart/${item.image}" alt="${
-      item.name
-    }"></a>
-            <p class="cart-details" id='item_cart'>
-                <a href="#">${item.name}</a>
+        <div class="cart-details" id='item_cart' style="display:flex; align-items:center; gap:15px">
+        <img src="../../images/cart/${item.image}" alt="${item.name}">
+            <p >
+                ${item.name}
             </p>
+        </div>
+            
         
-            <div class="cart-details"><p class="cart-details" id="price_cart">$${
-              item.price
-            }</p></div>
+            <p class="cart-details" id="price_cart">$${item.price}</p>
         
             
                 <div class="cart-details" id= "quantity_cart">
@@ -60,11 +61,12 @@ function displayCart() {
                 </div>
             
         
-            <p class="cart-details" id="total_cart">$${
-              item.price * item.quantity
-            }
+                <div class="cart-details" id="total_cart" style="display:flex; align-items:center">\
+                <p>$${item.price * item.quantity}</p>
                 <button class="remove-btn" onclick="removeItem(${index})">🗑️</button>
-            </p>
+                </div>
+            
+            
             
             
         `;
