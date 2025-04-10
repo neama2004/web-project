@@ -1,276 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - SafeBites Market</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" href="about.css" />
-  </head>
-  <body>
-    <header>
-      <div id="header-container">
-        <a
-          href="homepage.html"
-          style="text-decoration: none; color: black"
-          class="logo"
-          >🌿 SafeBites Market</a
-        >
-        <nav>
-          <ul>
-            <li><a href="../home/Homepage.html">Home</a></li>
-            <li><a href="../products/products.html">Products</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../contact/contact.html">Contact</a></li>
-            <li>
-              <!-- Dark/Light Mode Toggle Button -->
-              <div class="theme-toggle">
-                <input type="checkbox" id="dark-mode-toggle" />
-                <label for="dark-mode-toggle" class="dark-mode-label">
-                  <span>☀️</span>
-                  <span>🌑</span>
-                </label>
-              </div>
-            </li>
-            <!-- Cart Button with Counter -->
-            <button class="cart-btn" aria-label="Open cart">
-              🛒 <span id="cart-count">0</span>
-            </button>
-          </ul>
-          <div id="search-container">
-            <input
-              type="text"
-              placeholder="Search products..."
-              id="search-bar"
-              oninput="searchProducts()"
-            />
-            <div class="user-profile">
-              <a href="../login/login.html" id="profile-link">
-                <img
-                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
-                  alt="User Profile"
-                  id="img"
-                />
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SafeBites Market</title>
+  <link rel="stylesheet" href="AboutU.css">
+</head>
+<body>
+  <header>
+    <div class="headercontent">
+    <div id="logo">
+        🍏SafeBites Market 
+    </div>
+    <div id="navbar">
+   <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+   </ul>
+</div>
+<div id="icon-container">
+    <a href="cart.html" id="cart-icon" >
+        🛒
+    </a>
+    <a href="#" id="profile-link">
+        <img src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg" alt="User Profile" id="img">
+    </a>
+</div>
+</div>
+</header>
+<section id="about-header" class="about-header">
+    <h2>What About Us!</h2>
+</section>
+<section id="about" class="section p1">
+    <img src="images/WhatsApp Image 2025-04-09 at 20.23.18_0e9cf0ba.jpg" alt="">
+    <div>
+        <h2>What Is SafeBites Market?</h2>
+        <p>At SafeBites Market, we are more than just a grocery store — we are a community dedicated to making food safe, inclusive, and joyful for everyone. Born from a passion to support individuals with food allergies and dietary sensitivities, our mission is to provide a shopping experience that is both worry-free and flavorful. We carefully curate every product on our shelves to ensure it meets the highest standards of safety, transparency, and taste. Our vision is to lead the way in creating an allergy-free future — where families can shop confidently, meals can be shared freely, and no one is left out at the table. With a team driven by personal experience and deep care, we’re proud to be your trusted partner in healthy, happy living.
 
-    <div class="top">
-      <div class="top-container">
-        <img src="../../images/about_us/pho.jpg" alt="SafeBites Market" />
-        <div class="top-text">
-          <h1>About SafeBites Market!</h1>
-        </div>
+        </p>
+    </div>
+</section>
+<section id="video-section">
+    <div class="video-text">
+    <h2>When your snack is allergen-free and dance worthy, that's SafeBites
+        <a href="/pages/products/products.html" class="product-link">Products</a>.
+    </h2>
+    </div>
+    <div class="video-container">
+        <video id="dancingVideo" autoplay muted loop playsinline poster="images/video-poster.jpg">
+            <source src="images/video.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="../products/products.html">Products</a></li>
+          <li><a href="../about/about.html">About Us</a></li>
+          <li><a href="../contact/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="../help/faq.html">FAQ</a></li>
+          <li><a href="../help/shipping.html">Shipping Policy</a></li>
+          <li><a href="../help/returns.html">Return Policy</a></li>
+          <li><a href="../help/privacy.html">Privacy Policy</a></li>
+          <li><a href="../help/terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>My Account</h4>
+        <ul>
+          <li><a href="../user/profile.html">My Profile</a></li>
+          <li><a href="../user/orders.html">Order History</a></li>
+          <li><a href="../user/wishlist.html">Wishlist</a></li>
+          <li><a href="../user/settings.html">Account Settings</a></li>
+          <li><a href="../newsletter.html">Newsletter</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          <li><a href="mailto:info@safebites.com">info@safebites.com</a></li>
+          <li>123 Allergy-Free St, Foodville</li>
+          <li>Open 9AM-6PM Mon-Fri</li>
+        </ul>
       </div>
     </div>
-    <div class="container">
-      <div class="card-grid">
-        <div class="card" id="whoarewe">
-          <img src="../../images/img4.jpg" alt="Who We Are" />
-          <div class="card-content">
-            <h2>Who We Are?</h2>
-            <p class="preview-text">
-              We are a passionate team of food lovers, nutritionists, and
-              health-conscious individuals...
-            </p>
-            <p class="full-text">
-              We are a passionate team of food lovers, nutritionists, and
-              health-conscious individuals dedicated to making allergy-free
-              shopping safe and enjoyable. Inspired by personal experiences with
-              allergies, we founded SafeBites Market to offer a trusted place
-              where everyone can shop with confidence.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" id="mission">
-          <img src="../../images/about_us/img1.webp" alt="Our Mission" />
-          <div class="card-content">
-            <h2>Our Mission</h2>
-            <p class="preview-text">
-              At SafeBites Market, our mission is to provide a safe,
-              trustworthy, and allergy-free shopping experience...
-            </p>
-            <p class="full-text">
-              At SafeBites Market, our mission is to provide a safe,
-              trustworthy, and allergy-free shopping experience for all people.
-              We are committed to offering high-quality and delicious products
-              that serve people with food allergies, intolerances, and special
-              dietary needs. Our goal is to create a community where everyone
-              can enjoy food with confidence and peace of mind.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" id="vision">
-          <img src="../../images/about_us/img2.webp" alt="Our Vision" />
-          <div class="card-content">
-            <h2>Our Vision</h2>
-            <p class="preview-text">
-              We envision a world where no one has to worry about allergies when
-              shopping for groceries...
-            </p>
-            <p class="full-text">
-              We envision a world where no one has to worry about allergies when
-              shopping for groceries. Our aim is to be the leading allergy-free
-              supermarket, setting new standards for safety, transparency, and
-              quality. We strive to make allergy-free shopping accessible and
-              stress-free for all.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" id="whyus">
-          <img src="../../images/about_us/img3.jpg" alt="Why Our Supermarket" />
-          <div class="card-content">
-            <h2>Why Our Supermarket?</h2>
-            <p class="preview-text">
-              At SafeBites Market, we understand how difficult it can be to find
-              safe, allergy-free products...
-            </p>
-            <p class="full-text">
-              At SafeBites Market, we understand how difficult it can be to find
-              safe, allergy-free products. That's why we carefully select and
-              verify every item on our shelves to ensure they are free from
-              common allergens like nuts, dairy, gluten, soy, and more. We are
-              more than just a supermarket—we are a trusted partner in your
-              allergy-free journey.
-            </p>
-          </div>
-        </div>
-        <div class="values-section">
-          <h2>Our Values</h2>
-          <div class="values">
-            <div id="safety">
-              <i class="fas fa-shield-alt"></i>
-              <span>Safety First</span>
-            </div>
-            <div id="transparency">
-              <i class="fas fa-eye"></i>
-              <span>Transparency</span>
-            </div>
-            <div id="sustainability">
-              <i class="fas fa-leaf"></i>
-              <span>Sustainability</span>
-            </div>
-            <div id="quality">
-              <i class="fas fa-award"></i>
-              <span>Quality & Taste</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span class="footer-year">2025</span> SafeBites Market. All rights reserved.</p>
+      <p>Made with ♡ for allergy-conscious consumers</p>
     </div>
-    <button id="backtotop" title="Go to top">↑</button>
-
-    <!-- Footer -->
-    <footer
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 20px;
-        background-color: #333;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          gap: 20px;
-          background-color: #333;
-        "
-      >
-        <div class="col">
-          <a href="../contact/contact.html">Contact</a>
-        </div>
-
-        <div class="col">
-          <h4>About</h4>
-          <a href="../about.html/#">Who We Are?</a>
-          <a href="../about.html/#">Our Mission</a>
-          <a href="../about.html/#">Our Vision</a>
-          <a href="../about.html/#">Terms & Conditions</a>
-          <a href="../about.html/#">Why Us?</a>
-        </div>
-
-        <div class="col">
-          <a href="../login.html">Login</a>
-        </div>
-
-        <div class="col">
-          <h4>Socials</h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              gap: 5px;
-              margin: 0;
-              justify-content: center;
-              flex-direction: row;
-            "
-          >
-            <li>
-              <a href="https://www.facebook.com/"
-                ><img src="../../images/icons/facebook.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/"
-                ><img src="../../images/icons/insta.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/"
-                ><img src="../../images/icons/linkedin.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/"
-                ><img src="../../images/icons/yt.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="mailto:test@gmail.com" style="font-size: 1.5rem">✉️</a>
-            </li>
-            <li><a href="tel:+96145672562" style="font-size: 1.5rem">📞</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <section class="newsletter">
-          <h2>Subscribe for Deals</h2>
-          <p>Get the latest news, product updates, and exclusive offers.</p>
-          <input type="email" id="email" placeholder="Enter your email" />
-          <button onclick="subscribe()">Subscribe</button>
-        </section>
-
-        <button
-          class="contact-btn"
-          onclick="window.location.href='../contact/contact.html'"
-        >
-          Contact Us
-        </button>
-        <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
-      </div>
-    </footer>
-
-    <script src="about.js"></script>
-  </body>
+  </footer>
+  <script src="about.js"></script>
+</body>
 </html>
