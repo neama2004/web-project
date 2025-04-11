@@ -116,11 +116,11 @@ header {
   }
 }
 #about-header .about-header{
-  background-image: url(images/nm.jpg);
+  background-image: url(../../images/nm.jpg);
 }
 
      #about-header {
-      background-image: url(images/nm.jpg);
+      background-image: url(../../images/nm.jpg);
       width: 100%;
       height: 40vh;
       background-size: cover;
