@@ -124,7 +124,6 @@ input::-webkit-inner-spin-button {
 
 /* ===================== Cart Styles ===================== */
 .cart-container {
-    background: #d0e8ed;
     padding: 20px;
     display: flex;
     justify-content: space-between;

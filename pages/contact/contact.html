@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="contact.css" />
     <script src="contact.js"></script>
   </head>
@@ -99,7 +100,7 @@
             placeholder="Message"
           ></textarea
           ><br />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" id="conSub" />
         </form>
       </div>
 
@@ -109,8 +110,16 @@
           Subscribe to our newsletter to stay up to date on all the latest items
           and offers.
         </p>
-        <input type="text" name="news" id="newsInput" placeholder="Email" />
-        <button id="newsButton">Subscribe</button>
+        <form action="">
+          <input
+            type="email"
+            name="new"
+            id="newsInput"
+            placeholder="Email"
+            required
+          />
+          <input type="submit" name="new" id="newsButton" value="Subscribe" />
+        </form>
       </div>
     </main>
 
@@ -238,5 +247,6 @@
         <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
       </div>
     </footer>
+    
   </body>
 </html>

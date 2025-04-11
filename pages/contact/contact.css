@@ -361,7 +361,7 @@ input[type="tel"]{
     background-color: white;
     color: black;
 }
-.news button{
+.news #newsButton{
     width: 80%;
     background-color: black;
     color: white;
