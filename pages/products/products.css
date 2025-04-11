@@ -270,7 +270,7 @@ header {
   background-color: #329f94;
 }
 #modalcontent {
-  background-color: white;
+  background-color: #EBF4F6;
   padding: 2rem;
   border-radius: 12px;
   width: 400px;
@@ -290,6 +290,19 @@ header {
   right: 16px;
   font-size: 24px;
   cursor: pointer;
+}
+#add-to-cart{
+  background-color: #3caea3;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto 0 auto;
+  height:30px;
+  width:100px;
 }
 footer {
   background: linear-gradient(135deg, #088395 0%, #071952 100%);
