@@ -5,6 +5,7 @@
     "description": "Perfectly chewy bagels without gluten.",
     "price": 3.99,
     "image": "../../images/images/GFbagels.webp",
+    "quantity": 1,
     "allergyFree": ["Nuts", "Gluten", "Dairy"]
     },
     {
@@ -13,6 +14,7 @@
     "description": "The best sweet and  moist muffins.",
     "price": 10,
     "image": "../../images/images/GFMuffins.webp",
+    "quantity": 1,
     "allergyFree": ["Gluten"]
     },
     {
@@ -21,6 +23,7 @@
         "description": "Delicious gluten-free pizza with crispy crust",
         "price":5.69,
         "image":"../../images/images/GFfrozenpizza.jpg",
+        "quantity": 1,
         "allergyFree":["Gluten"]
     },
     {
@@ -29,6 +32,7 @@
         "description": "Gluten-free almond crust filled with vanilla custard and fresh blueberries",
         "price": 21.99,
         "image":"../../images/images/GFBlueberryandAlmond Tart.webp",
+        "quantity": 1,
         "allergyFree":["Gluten"]
     },
     {
@@ -37,6 +41,7 @@
         "description": "A box full of fluffy, eggless, allergen-free donuts — the sweetest way to stay safe! 🍩",
         "price": 11,
         "image":"../../images/images/GFDonuts.webp",
+        "quantity": 1,
         "allergyFree":["Gluten"]
     },
     {
@@ -45,6 +50,7 @@
         "description": "Bite-sized, allergy-friendly cookies — deliciously safe for all ages and diets.",
         "price": 3.5,
         "image":"../../images/images/GFCookiesBites.webp",
+        "quantity": 1,
         "allergyFree":["Gluten","Dairy","Eggs"]
     },
     {
@@ -53,6 +59,7 @@
         "description": "Boost your energy without worrying about your allergy.",
         "price": 1.5,
         "image":"../../images/images/NFbar.jpg",
+        "quantity": 1,
         "allergyFree":["Nuts"]
     },
     {
@@ -61,6 +68,7 @@
         "description": "Mellow Trio of Truffles in a parchment Box.",
         "price": 21.99,
         "image":"../../images/images/NFMellowTrioofTrufflesinParchmentBox.webp",
+        "quantity": 1,
         "allergyFree":["Nuts"]
     },
     {
@@ -69,6 +77,7 @@
         "description": "A nut-free, energy-packed mix of seeds, fruits, and crunch — made for safe snacking on-the-go.",
         "price": 6.5,
         "image":"../../images/images/Nut-FreeTrailMix.jpg",
+        "quantity": 1,
         "allergyFree":["Nuts"]
     },
     {
@@ -77,6 +86,7 @@
         "description": "Chewie 'N' Rich chocolate pumpkin seed protein bar.",
         "price": 0.75,
         "image":"../../images/images/NFproteinbars.jpg",
+        "quantity": 1,
         "allergyFree":["Nuts","Gluten"]
     },
     {
@@ -85,6 +95,7 @@
         "description": "Soft and protein-rich product, perfect for savory dishes..",
         "price": 6.38,
         "image":"../../images/images/soyfreetufo.webp",
+        "quantity": 1,
         "allergyFree":["Soy","Gluten"]
     },
     {
@@ -93,6 +104,7 @@
         "description": "A dairy-free, plant-based alternative to butter — smooth,and spreadable",
         "price": 4.66,
         "image":"../../images/images/VitaliteDairyFreeSpread.webp",
+        "quantity": 1,
         "allergyFree":["Dairy"]
     },
     {
@@ -101,6 +113,7 @@
         "description": "Soft, fresh, and gluten-free — perfect for sandwiches or toasting without the allergens.",
         "price":3,
         "image":"../../images/images/DFBread.webp",
+        "quantity": 1,
         "allergyFree":["Dairy"]
     },
     {
@@ -109,6 +122,7 @@
         "description": "Grated Cheese Alternative.",
         "price": 3.66,
         "image":"../../images/images/DairyFreeGratedCheeseAlternative.webp",
+        "quantity": 1,
         "allergyFree":["Dairy"]
     },
     {
@@ -117,6 +131,7 @@
         "description": "Flora Salted Irresistbly Creamy Butter.",
         "price": 3.5,
         "image":"../../images/images/DFPlantButter.webp",
+        "quantity": 1,
         "allergyFree":["Dairy"]
     },
     {
@@ -125,6 +140,7 @@
         "description": "Burger patties made without soy or gluten.",
         "price": 8.5,
         "image":"../../images/images/DairyFreeVeggiefrozenBurgers.jpg",
+        "quantity": 1,
         "allergyFree":["Soy","Gluten"]
     },
     {
@@ -133,6 +149,7 @@
         "description": "A classical soft, fluffy donut .",
         "price": 1.75,
         "image":"../../images/images/egglessdonut.jpg",
+        "quantity": 1,
         "allergyFree":["Egg"]
     },
     {
@@ -141,6 +158,7 @@
         "description": "A soft, fluffy donut made without eggs .",
         "price": 1,
         "image":"../../images/images/EgglessChocolatchipcookies.jpg",
+        "quantity": 1,
         "allergyFree":["Egg"]
     },
     {
@@ -149,6 +167,7 @@
         "description": "Traditional pasta made without eggs.",
         "price": 2.85,
         "image":"../../images/images/egglesspasta.webp",
+        "quantity": 1,
         "allergyFree":["Egg"] 
     },
     {
@@ -157,6 +176,7 @@
         "description": " Brownies are super fudgy, moist, chewy, dense, and chocolaty.",
         "price": 2.25,
         "image":"../../images/images/EgglessBrownie.jpg",
+        "quantity": 1,
         "allergyFree":["Egg"] 
     },
     {
@@ -165,6 +185,7 @@
         "description": "These bite-sized pastries are perfect for breakfast or snacking.",
         "price": 5,
         "image":"../../images/images/Egglessminicroissants.jpg",
+        "quantity": 1,
         "allergyFree":["Egg"] 
     },
     {
@@ -173,6 +194,7 @@
         "description": "Crunchy, delicious, and perfectly salted gluten-free pretzels.",
         "price": 0.85,
         "image":"../../images/images/GFpretzels.jpg",
+        "quantity": 1,
         "allergyFree":["Gluten"] 
     },
     {
@@ -181,6 +203,7 @@
         "description": "Allergy Freindly Snack Bar.",
         "price": 1,
         "image":"../../images/images/AllergenFree SnackBars.jpg",
+        "quantity": 1,
         "allergyFree":["Gluten","Nuts","Dairy","Soy"] 
     },
     {
@@ -189,6 +212,7 @@
     "description": "Creamy Caesar-style dressing, allergen-friendly.",
     "price": 4.25,
     "image":"../../images/images/ceaserdressing.jpg",
+    "quantity": 1,
     "allergyFree":["Gluten","Nuts","Dairy","Soy"] 
    },
    {
@@ -197,6 +221,7 @@
     "description": "Creamy  frozen dessert available in Oreo, Chocolate Chip, and Vanilla flavors.",
     "price": 5.36,
     "image":"../../images/images/dairyfreeicecream.jpg",
+    "quantity": 1,
     "allergyFree":["Dairy"] 
    },
    {
@@ -205,6 +230,7 @@
     "description": "A creamy, indulgent treat — pure joy in every bite!",
     "price": 5.36,
     "image":"../../images/images/GFEclair.webp",
+    "quantity": 1,
     "allergyFree":["Gluten"] 
    },
    {
@@ -213,6 +239,7 @@
      "description": "A creamy, indulgent treat — pure joy in every bite!",
      "price": 25,
      "image":"../../images/images/GlutenFreeChocolatecake.webp",
+     "quantity": 1,
      "allergyFree":["Gluten"] 
     },
     {
@@ -221,6 +248,7 @@
          "description": "A juicy lemon loaf without eggs",
          "price": 5.36,
          "image":"../../images/images/EFLemonLoaf.jpg",
+         "quantity": 1,
          "allergyFree":["Egg"] 
         }
 ]
