@@ -9,7 +9,7 @@
 
 body {
     background: #EBF4F6;
-    color: #088395;
+    color: #789599;
     overflow-x: hidden;
 }
 
@@ -30,79 +30,15 @@ a:hover {
     color: #088395;
 }
 
-/* ===================== Header ===================== */
-.header {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    background-color: #088395;
-    color: #EBF4F6;
-    height: 60px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 5px;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #EBF4F6;
-}
-.logo i {
-    font-size: 1.5rem;
-}
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.navbar ul li {
-    color: #d0e8ed;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: #EBF4F6;
-    font-size: 1rem;
-}
-.navbar ul li a:hover {
-    color: #d0e8ed;
-}
-.user-profile img {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    padding: 5px;
-    padding-right: 0;
-}
-.user-profile img:hover {
-    opacity: 0.8;
-}
+
 
 #afterHeader {
     margin-top: 100px;
     background-color: #EBF4F6;
+    height: 1vh;
 }
 
-/* ===================== Footer ===================== */
-footer {
-    background: linear-gradient(135deg, #088395 0%, #071952 100%);
-    color: #EBF4F6;
-    text-align: center;
-    padding: 20px;
-    font-size: 18px;
-}
+
 
 /* ===================== Animations ===================== */
 @keyframes fadeIn {
@@ -114,12 +50,6 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }
 
 /* ===================== Cart Styles ===================== */
@@ -135,7 +65,7 @@ input::-webkit-inner-spin-button {
 
 #cart-items {
     width: 70%;
-    background: #EBF4F6;
+    background: rgb(235, 244, 246);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px 50px 50px 50px;
     padding: 20px;
@@ -261,7 +191,7 @@ input[type="number"] {
     color: #071952;
 }
 
-.remove-btn, .restore-btn {
+.remove-btn, .checkout-btn {
     background-color: #EBF4F6;
     border-radius: 5px;
     padding: 7px 12px;
@@ -272,7 +202,7 @@ input[type="number"] {
     color: #071952;
     border: none;
 }
-.restore-btn {
+.checkout-btn {
     color: #3caea3;
     border: 1px solid #3caea3;
     display: block;
@@ -282,7 +212,7 @@ input[type="number"] {
     background-color: #3caea3;
     color: #EBF4F6;
 }
-.restore-btn:hover {
+.checkout-btn:hover {
     background-color: #3caea3;
     color: #EBF4F6;
 }
@@ -310,148 +240,60 @@ input[type="number"] {
     background-color: #329f94;
     transform: translateY(-2px);
 }
-
-/* ===================== Dark/Light Mode Toggle ===================== */
-#dark-mode-toggle {
-    display: none;
+/*for hiding the arrows in the number inputtt*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.dark-mode-label {
-    width: 50px;
-    height: 26px;
-    background: #ccc;
-    border-radius: 50px;
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+#modal-content{
+    background-color: white;
+    padding: 20px;
+    color: #071952;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    display: inline-block;
+    top: 40%;
+    left: 40%;
 }
-
-.dark-mode-label::after {
-    content: '';
-    width: 22px;
-    height: 22px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s ease;
-}
-
-#dark-mode-toggle:checked + .dark-mode-label {
-    background: #071952;
-}
-
-#dark-mode-toggle:checked + .dark-mode-label::after {
-    transform: translateX(24px);
-    background: #EBF4F6;
-}
-
-/* ===================== Dark Mode Styles ===================== */
-.dark-mode {
-    background: #071952;
-    color: #EBF4F6;
-}
-
-.dark-mode header {
-    background: rgba(7, 25, 82, 0.9);
-}
-
-.dark-mode .logo {
-    color: #EBF4F6;
-}
-
-.dark-mode nav ul li a {
-    color: #EBF4F6;
-}
-.dark-mode a {
-    color: #EBF4F6;
-}
-
-.dark-mode nav ul li a:hover {
-    color: #d0e8ed;
-}
-
-.dark-mode #afterHeader {
-    background-color: #0a2a7a;
-    color: #EBF4F6;
-}
-
-.dark-mode .cart-container {
-    background: #0a2a7a;
-    color: #EBF4F6;
-}
-
-.dark-mode #cart-items,
-.dark-mode #totalOrder {
-    background: #0d3a9a;
-    color: #EBF4F6;
-    box-shadow: 0 0 10px rgba(235, 244, 246, 0.1);
-}
-
-.dark-mode .cart-column {
-    border-bottom: 2px solid #3caea3;
-}
-
-.dark-mode .cart-header,
-.dark-mode .cart-details,
-.dark-mode .total,
-.dark-mode #item_col,
-.dark-mode #item_cart,
-.dark-mode #quantity_col,
-.dark-mode #quantity_cart,
-.dark-mode #total_col,
-.dark-mode #total_cart {
-    color: #EBF4F6;
-}
-
-.dark-mode .pmbtn {
-    background-color: #0d3a9a;
-    color: #EBF4F6;
-    border: 1px solid #3caea3;
-}
-
-.dark-mode .pmbtn:hover {
-    background-color: #3caea3;
-}
-
-.dark-mode input[type="number"] {
-    background: #0d3a9a;
-    color: #EBF4F6;
-    border: 1px solid #3caea3;
-}
-
-.dark-mode .remove-btn,
-.dark-mode .restore-btn {
-    background-color: #0d3a9a;
-    color: #EBF4F6;
-}
-
-.dark-mode .remove-btn {
-    border: 1px solid #3caea3;
-}
-
-.dark-mode .restore-btn {
-    border: 1px solid #3caea3;
-}
-
-.dark-mode .remove-btn:hover,
-.dark-mode .restore-btn:hover {
-    background-color: #3caea3;
-}
-
-.dark-mode .checkout-btn {
-    background-color: #3caea3;
+#modal-text{
     color: #071952;
 }
-
-.dark-mode .checkout-btn:hover {
-    background-color: #329f94;
-    color: #EBF4F6;
+#modal-content *{
+    margin: 5px;
+    padding: 5px;
+}
+#close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
+
 @media screen and (max-width: 925px) {
+    #modal-content{
+        width: 80%;
+        top: 40%;
+        left: 15%;
+    }
+
     .cart-container {
         flex-direction: column;
         align-items: center;
@@ -475,6 +317,12 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 600px) {
+    #modal-content{
+        width: 70%;
+        top: 40%;
+        left: 15%;
+    }
+
     .cart-header, #price_cart {
         display: none;
     }
@@ -505,3 +353,4 @@ input[type="number"] {
         margin-right: 0px;
     }
 }
+
