@@ -9,56 +9,7 @@
     <script src="contact.js"></script>
   </head>
   <body>
-    <header>
-      <div id="header-container">
-        <a
-          href="homepage.html"
-          style="text-decoration: none; color: black"
-          class="logo"
-          >🌿 SafeBites Market</a
-        >
-        <nav>
-          <ul>
-            <li><a href="../home/Homepage.html">Home</a></li>
-            <li><a href="../products/products.html">Products</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="../contact/contact.html">Contact</a></li>
-            <li>
-              <!-- Dark/Light Mode Toggle Button -->
-              <div class="theme-toggle">
-                <input type="checkbox" id="dark-mode-toggle" />
-                <label for="dark-mode-toggle" class="dark-mode-label">
-                  <span>☀️</span>
-                  <span>🌑</span>
-                </label>
-              </div>
-            </li>
-            <!-- Cart Button with Counter -->
-            <button class="cart-btn" aria-label="Open cart">
-              🛒 <span id="cart-count">0</span>
-            </button>
-          </ul>
-          <div id="search-container">
-            <input
-              type="text"
-              placeholder="Search products..."
-              id="search-bar"
-              oninput="searchProducts()"
-            />
-            <div class="user-profile">
-              <a href="../login/login.html" id="profile-link">
-                <img
-                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
-                  alt="User Profile"
-                  id="img"
-                />
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-
+   
     <section id="bgp">
       <h1>Contact Us</h1>
     </section>
@@ -82,6 +33,22 @@
               placeholder="Phone"
             /><br />
           </div>
+          <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Name"
+              class="hippo"
+            />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Phone"
+              class="hippo"
+            />
 
           <input
             type="email"
@@ -154,99 +121,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 20px;
-        background-color: #333;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          gap: 20px;
-          background-color: #333;
-        "
-      >
-        <div class="col">
-          <a href="../contact/contact.html">Contact</a>
-        </div>
 
-        <div class="col">
-          <h4>About</h4>
-          <a href="../about.html/#">Who We Are?</a>
-          <a href="../about.html/#">Our Mission</a>
-          <a href="../about.html/#">Our Vision</a>
-          <a href="../about.html/#">Terms & Conditions</a>
-          <a href="../about.html/#">Why Us?</a>
-        </div>
-
-        <div class="col">
-          <a href="../login.html">Login</a>
-        </div>
-
-        <div class="col">
-          <h4>Socials</h4>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              gap: 5px;
-              margin: 0;
-              justify-content: center;
-              flex-direction: row;
-            "
-          >
-            <li>
-              <a href="https://www.facebook.com/"
-                ><img src="../../images/icons/facebook.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/"
-                ><img src="../../images/icons/insta.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/"
-                ><img src="../../images/icons/linkedin.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/"
-                ><img src="../../images/icons/yt.png" alt=""
-              /></a>
-            </li>
-            <li>
-              <a href="mailto:test@gmail.com" style="font-size: 1.5rem">✉️</a>
-            </li>
-            <li><a href="tel:+96145672562" style="font-size: 1.5rem">📞</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <section class="newsletter">
-          <h2>Subscribe for Deals</h2>
-          <p>Get the latest news, product updates, and exclusive offers.</p>
-          <input type="email" id="email" placeholder="Enter your email" />
-          <button onclick="subscribe()">Subscribe</button>
-        </section>
-
-        <button
-          class="contact-btn"
-          onclick="window.location.href='../contact/contact.html'"
-        >
-          Contact Us
-        </button>
-        <p>&copy; 2025 SafeBites Market | All Rights Reserved</p>
-      </div>
-    </footer>
-    
   </body>
 </html>
