@@ -8,63 +8,59 @@
     <link rel="stylesheet" href="Cart.css" />
   </head>
   <body>
-  <header>
-    <div id="header-container">
-      <a
-      href="../home/Homepage.html"
-        class="logo"
-        >🍏SafeBites Market</a
-      >
-      <nav>
-        <ul>
-          <li><a href="../home/Homepage.html">Home</a></li>
-          <li><a href="../products/products.html">Products</a></li>
-          <li><a href="../about/about.html">About</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
-          <li>
-            <div class="theme-toggle">
-              <input type="checkbox" id="dark-mode-toggle" />
-              <label for="dark-mode-toggle" class="dark-mode-label">
-                <span>☀️</span>
-                <span>🌑</span>
-              </label>
+    <header>
+      <div id="header-container">
+        <a href="../home/Homepage.html" class="logo">🍏SafeBites Market</a>
+        <nav>
+          <ul>
+            <li><a href="../home/Homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+            <li>
+              <div class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle" />
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                  <span>☀️</span>
+                  <span>🌑</span>
+                </label>
+              </div>
+            </li>
+            <div id="icon-container">
+              <div class="iconSpan">
+                <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>8
+              </div>
+              <a href="#" class="user-profile-trigger">
+                <img
+                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
+                  alt="User Profile"
+                  id="img"
+                />
+              </a>
             </div>
-          </li>
-          <div id="icon-container">
-            <div class="iconSpan">
-              <span id="cart-count">0</span>
-              <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>
-            </div>
-            <a href="#" class="user-profile-trigger">
-              <img
-                src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
-                alt="User Profile"
-                id="img"
-              />
-            </a>
-          </div>
-        </ul>
-      </nav>
-    </div>
-  </header>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <!-- User Profile Sidebar (now in HTML instead of JS) -->
-  <div class="user-profile-sidebar">
-    <div class="sidebar-header">
-      <h3>My Account</h3>
-      <button class="close-sidebar">&times;</button>
+    <!-- User Profile Sidebar (now in HTML instead of JS) -->
+    <div class="user-profile-sidebar">
+      <div class="sidebar-header">
+        <h3>My Account</h3>
+        <button class="close-sidebar">&times;</button>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="../login/login.html">Login</a></li>
+        <li><a href="../profile/profile.html">Profile</a></li>
+        <li><a href="../cart/Cart.html">My Orders</a></li>
+        <li><a href="../contact/contact.html">Help Center</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button class="logout-btn">Logout</button>
+      </div>
     </div>
-    <ul class="sidebar-menu">
-      <li><a href="../login/login.html">Login</a></li>
-      <li><a href="../profile/profile.html">Profile</a></li>
-      <li><a href="../cart/Cart.html">My Orders</a></li>
-      <li><a href="../contact/contact.html">Help Center</a></li>
-    </ul>
-    <div class="sidebar-footer">
-      <button class="logout-btn">Logout</button>
-    </div>
-  </div>
-  <div class="sidebar-overlay"></div>
+    <div class="sidebar-overlay"></div>
+
     <section id="afterHeader">
       <h2>Shopping Cart</h2>
       <h3>Cart Items</h3>

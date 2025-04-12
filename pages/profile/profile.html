@@ -13,18 +13,12 @@
     <script src="profile.js" defer></script>
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div id="header-container">
-        <a
-          href="../home/homepage.html"
-          style="text-decoration: none; color: black"
-          class="logo"
-          >🌿 SafeBites Market</a
-        >
+        <a href="../home/Homepage.html" class="logo">🍏SafeBites Market</a>
         <nav>
           <ul>
-            <li><a href="../home/homepage.html">Home</a></li>
+            <li><a href="../home/Homepage.html">Home</a></li>
             <li><a href="../products/products.html">Products</a></li>
             <li><a href="../about/about.html">About</a></li>
             <li><a href="../contact/contact.html">Contact</a></li>
@@ -37,28 +31,24 @@
                 </label>
               </div>
             </li>
-            <button
-              class="cart-btn"
-              aria-label="Open cart"
-              onclick="window.location.href='../cart/Cart.html'"
-            >
-              🛒 <span id="cart-count">0</span>
-            </button>
-            <li class="user-profile-container">
-              <div class="user-profile-trigger">
+            <div id="icon-container">
+                <span id="cart-count">0</span>
+                <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>8
+              </div>
+              <a href="#" class="user-profile-trigger">
                 <img
                   src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
                   alt="User Profile"
-                  class="profile-icon"
+                  id="img"
                 />
-              </div>
-            </li>
+              </a>
+            </div>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- User Profile Sidebar -->
+    <!-- User Profile Sidebar (now in HTML instead of JS) -->
     <div class="user-profile-sidebar">
       <div class="sidebar-header">
         <h3>My Account</h3>
@@ -66,7 +56,7 @@
       </div>
       <ul class="sidebar-menu">
         <li><a href="../login/login.html">Login</a></li>
-        <li><a href="../user/profile.html">Profile</a></li>
+        <li><a href="../profile/profile.html">Profile</a></li>
         <li><a href="../cart/Cart.html">My Orders</a></li>
         <li><a href="../contact/contact.html">Help Center</a></li>
       </ul>
@@ -179,14 +169,13 @@
       </div>
     </main>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-wave"></div>
       <div class="footer-container">
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../home/homepage.html">Home</a></li>
+            <li><a href="homepage.html">Home</a></li>
             <li><a href="../products/products.html">Products</a></li>
             <li><a href="../about/about.html">About Us</a></li>
             <li><a href="../contact/contact.html">Contact</a></li>
@@ -208,7 +197,7 @@
           <h4>My Account</h4>
           <ul>
             <li><a href="../user/profile.html">My Profile</a></li>
-            <li><a href="../cart/Cart.html">Order History</a></li>
+            <li><a href="../user/orders.html">Order History</a></li>
             <li><a href="../user/wishlist.html">Wishlist</a></li>
             <li><a href="../user/settings.html">Account Settings</a></li>
             <li><a href="../newsletter.html">Newsletter</a></li>
@@ -231,7 +220,7 @@
           &copy; <span class="footer-year">2025</span> SafeBites Market. All
           rights reserved.
         </p>
-        <p>Made with ❤️ for allergy-conscious consumers</p>
+        <p>Made with ♡ for allergy-conscious consumers</p>
       </div>
     </footer>
 

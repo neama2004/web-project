@@ -1,7 +1,5 @@
 let tasksStorage = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-
 let defaultCart = [
   { name: "Cookies 1", price: 10, quantity: 1, image: "item1.jpg" },
   {
@@ -172,19 +170,18 @@ function checkout() {
 
 displayCart();
 
-
 let cartCount = 0;
-  const cartCountElement = document.getElementById("cart-count");
+const cartCountElement = document.getElementById("cart-count");
 
-  const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-  cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
-  updateCartCount();
+const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
+updateCartCount();
 
-  function updateCartCount() {
-    if (cartCountElement) {
-      cartCountElement.textContent = cartCount;
-    }
+function updateCartCount() {
+  if (cartCountElement) {
+    cartCountElement.textContent = cartCount;
   }
+}
 
 // ===================== Dark Mode Toggle =====================
 // Dark mode toggle functionality

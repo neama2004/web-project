@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Get cart count from localStorage
-  function updateCartCount() {
+  function update() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const count = cart.reduce((total, item) => total + item.quantity, 0);
     document.getElementById("cart-count").textContent = count;
