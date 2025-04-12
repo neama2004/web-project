@@ -78,6 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
         displayProducts(filteredProducts);
       }
     });
+    const searchBar = document.getElementById("search-bar");
+
+searchBar.addEventListener("input", function () {
+  const query = searchBar.value.toLowerCase().trim();
+
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(query)
+  );
+
+  displayProducts(filteredProducts);
+});
+
   });
 
   function openModal(product) {
