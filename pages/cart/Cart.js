@@ -66,6 +66,7 @@ function displayCart() {
   cartContainer.innerHTML = "";
   let totalPrice = 0;
   if (cart.length === 0) {
+    $(".total").text("Total:$0.00");
     $(".checkout-btn").hide();
     cartContainer.innerHTML =
       "<h2>Your cart is empty...</h2><h2>Add an item to see it here!</h2><img src='../../images/cart/empty_cart.jpg' alt='empty cart' style='width: 400px; height: 400px;'>";
