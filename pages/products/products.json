@@ -13,7 +13,7 @@
     "name": "Muffins",
     "description": "The best sweet and  moist muffins.",
     "price": 10,
-    "image": "../../images/images/GFMuffins.webp",
+    "image": "../../images/homeimg/GFMuffins.webp",
     "quantity": 1,
     "allergyFree": ["Gluten"]
     },
@@ -22,7 +22,7 @@
         "name": "Frozen Four Cheese Pizza",
         "description": "Delicious gluten-free pizza with crispy crust",
         "price":5.69,
-        "image":"../../images/images/GFfrozenpizza.jpg",
+        "image":"../../images/homeimg/GFfrozenpizza.jpg",
         "quantity": 1,
         "allergyFree":["Gluten"]
     },
@@ -40,7 +40,7 @@
         "name": "Donuts Box",
         "description": "A box full of fluffy, eggless, allergen-free donuts — the sweetest way to stay safe! 🍩",
         "price": 11,
-        "image":"../../images/images/GFDonuts.webp",
+        "image":"../../images/homeimg/GFDonuts.webp",
         "quantity": 1,
         "allergyFree":["Gluten"]
     },
@@ -49,7 +49,7 @@
         "name": "CookiesBites",
         "description": "Bite-sized, allergy-friendly cookies — deliciously safe for all ages and diets.",
         "price": 3.5,
-        "image":"../../images/images/GFCookiesBites.webp",
+        "image":"../../images/homeimg/GFCookiesBites.webp",
         "quantity": 1,
         "allergyFree":["Gluten","Dairy","Eggs"]
     },
@@ -193,7 +193,7 @@
         "name": "Schar Pretzels",
         "description": "Crunchy, delicious, and perfectly salted gluten-free pretzels.",
         "price": 0.85,
-        "image":"../../images/images/GFpretzels.jpg",
+        "image":"../../images/homeimg/GFpretzels.jpg",
         "quantity": 1,
         "allergyFree":["Gluten"] 
     },
@@ -229,7 +229,7 @@
     "name": "Eclair",
     "description": "A creamy, indulgent treat — pure joy in every bite!",
     "price": 5.36,
-    "image":"../../images/images/GFEclair.webp",
+    "image":"../../images/homeimg/GFEclair.webp",
     "quantity": 1,
     "allergyFree":["Gluten"] 
    },
@@ -238,7 +238,7 @@
      "name": "Chocolate Cake",
      "description": "A creamy, indulgent treat — pure joy in every bite!",
      "price": 25,
-     "image":"../../images/images/GlutenFreeChocolatecake.webp",
+     "image":"../../images/homeimg/GlutenFreeChocolatecake.webp",
      "quantity": 1,
      "allergyFree":["Gluten"] 
     },

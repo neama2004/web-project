@@ -88,7 +88,7 @@ signInForm.addEventListener("submit", (e) => {
         sessionStorage.setItem("currentUser", JSON.stringify(user));
         
         // Redirect to homepage
-        window.location.href = "Homepage.html";
+        window.location.href = "../home/Homepage.html";
     } else {
         alert("Invalid email or password. Please try again.");
     }
