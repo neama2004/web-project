@@ -54,7 +54,25 @@ body {
 }
 
 
-
+#icon-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+.iconSpan{
+  color: #EBF4F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.iconSpan span{
+  background-color: #309187;
+  border-radius: 30px;
+  width: 18px;
+  text-align: center;
+}
 
 
 

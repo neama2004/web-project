@@ -6,9 +6,66 @@
     <title>Contact Us</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="contact.css" />
-    <script src="contact.js"></script>
+    <script src="contact.js" defer></script>
   </head>
   <body>
+    <header>
+      <div id="header-container">
+        <a
+        href="../home/Homepage.html"
+          class="logo"
+          >🍏SafeBites Market</a
+        >
+        <nav>
+          <ul>
+            <li><a href="../home/Homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+            <li>
+              <div class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle" />
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                  <span>☀️</span>
+                  <span>🌑</span>
+                </label>
+              </div>
+            </li>
+            <div id="icon-container">
+              <div class="iconSpan">
+                <span id="cart-count">0</span>
+                <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>
+              </div>
+              <a href="#" class="user-profile-trigger">
+                <img
+                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
+                  alt="User Profile"
+                  id="img"
+                />
+              </a>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- User Profile Sidebar (now in HTML instead of JS) -->
+    <div class="user-profile-sidebar">
+      <div class="sidebar-header">
+        <h3>My Account</h3>
+        <button class="close-sidebar">&times;</button>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="../login/login.html">Login</a></li>
+        <li><a href="../profile/profile.html">Profile</a></li>
+        <li><a href="../cart/Cart.html">My Orders</a></li>
+        <li><a href="../contact/contact.html">Help Center</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button class="logout-btn">Logout</button>
+      </div>
+    </div>
+    <div class="sidebar-overlay"></div>
    
     <section id="bgp">
       <h1>Contact Us</h1>
@@ -121,6 +178,60 @@
       </div>
     </section>
 
+    <footer>
+      <div class="footer-wave"></div>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="../help/faq.html">FAQ</a></li>
+            <li><a href="../help/shipping.html">Shipping Policy</a></li>
+            <li><a href="../help/returns.html">Return Policy</a></li>
+            <li><a href="../help/privacy.html">Privacy Policy</a></li>
+            <li><a href="../help/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="../user/profile.html">My Profile</a></li>
+            <li><a href="../user/orders.html">Order History</a></li>
+            <li><a href="../user/wishlist.html">Wishlist</a></li>
+            <li><a href="../user/settings.html">Account Settings</a></li>
+            <li><a href="../newsletter.html">Newsletter</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="mailto:info@safebites.com">info@safebites.com</a></li>
+            <li>123 Allergy-Free St, Foodville</li>
+            <li>Open 9AM-6PM Mon-Fri</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span class="footer-year">2025</span> SafeBites Market. All
+          rights reserved.
+        </p>
+        <p>Made with ♡ for allergy-conscious consumers</p>
+      </div>
+    </footer>
+    
   </body>
 </html>
