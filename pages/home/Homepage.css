@@ -144,6 +144,7 @@ header {
   align-items: center;
 }
 
+
 .logo {
   font-size: 26px;
   font-weight: bold;
@@ -625,7 +626,7 @@ nav ul li a:hover {
 }
 
 .dark-mode .about h2 {
-  color: #EBF4F6;
+  color: #071952;
 }
 
 .about-subtitle {
@@ -638,7 +639,7 @@ nav ul li a:hover {
 }
 
 .dark-mode .about-subtitle {
-  color: #EBF4F6;
+  color: #071952;
 }
 
 .features {
