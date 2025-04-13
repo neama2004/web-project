@@ -224,12 +224,17 @@ body {
 .product-allergies {
   margin-top: 0.5rem;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .allergy-tag {
   background-color: #EBF4F6;
   color: #088395;
   padding: 0.3rem 0.5rem;
+  text-wrap: nowrap;
   border-radius: 5px;
   font-size: 0.9rem;
   margin-right: 0.5rem;

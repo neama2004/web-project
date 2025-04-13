@@ -143,6 +143,7 @@ body {
   gap: 25px;
   padding: 20px 0;
   overflow-x: auto;
+  justify-content: center;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;

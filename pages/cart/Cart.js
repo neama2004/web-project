@@ -94,14 +94,14 @@ function displayCart() {
             
                 <div class="cart-details" id= "quantity_cart">
                     <button class = "pmbtn" onclick="updateQuantity(${index}, ${
-      item.quantity + 1
-    })"> + </button>
+      item.quantity - 1
+    })"> - </button>
                     <input type="number" value="${
                       item.quantity
                     }" min="1" onchange="updateQuantity(${index}, this.value)"></input>
                     <button class = "pmbtn" onclick="updateQuantity(${index}, ${
-      item.quantity - 1
-    })"> - </button>
+      item.quantity + 1
+    })"> + </button>
                 </div>
             
         
@@ -167,6 +167,7 @@ function checkout() {
   modal.append(modalContent);
   body.append(modal);
   displayCart();
+  checkDarkMode();
 }
 
 displayCart();
@@ -188,22 +189,28 @@ function updateCartCount() {
 // Dark mode toggle functionality
 let darkModeToggle = document.getElementById("dark-mode-toggle");
 
-// Load saved dark mode preference
-if (darkModeToggle) {
-  let savedDarkMode = localStorage.getItem("darkMode") === "true";
-  darkModeToggle.checked = savedDarkMode;
-  document.body.classList.toggle("dark-mode", savedDarkMode);
+function checkDarkMode() {
+  // Load saved dark mode preference
+  if (darkModeToggle) {
+    let savedDarkMode = localStorage.getItem("darkMode") === "true";
+    darkModeToggle.checked = savedDarkMode;
+    document.body.classList.toggle("dark-mode", savedDarkMode);
 
-  // Toggle dark mode when checkbox changes
-  darkModeToggle.addEventListener("change", function () {
-    let isDarkMode = this.checked;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-    localStorage.setItem("darkMode", isDarkMode);
+    // Toggle dark mode when checkbox changes
+    darkModeToggle.addEventListener("change", function () {
+      let isDarkMode = this.checked;
+      document.body.classList.toggle("dark-mode", isDarkMode);
+      $(".cart_column").toggleClass("p-dark-mode", isDarkMode);
+      $(".total").toggleClass("p-dark-mode", isDarkMode);
+      $("p").toggleClass("p-dark-mode", isDarkMode);
+      localStorage.setItem("darkMode", isDarkMode);
 
-    // Update UI elements that need dark mode changes
-    updateDarkModeElements(isDarkMode);
-  });
+      // Update UI elements that need dark mode changes
+      updateDarkModeElements(isDarkMode);
+    });
+  }
 }
+checkDarkMode();
 
 function updateDarkModeElements(isDarkMode) {
   // Update modal for dark mode
@@ -223,6 +230,7 @@ function updateDarkModeElements(isDarkMode) {
   if (sidebar) {
     sidebar.classList.toggle("dark-mode", isDarkMode);
   }
+  checkDarkMode();
 }
 
 // ===================== User Profile Sidebar =====================
@@ -253,6 +261,7 @@ function toggleSidebar(shouldOpen) {
     document.body.style.overflow = "";
     isSidebarOpen = false;
   }
+  checkDarkMode();
 }
 
 // Profile trigger click handler
