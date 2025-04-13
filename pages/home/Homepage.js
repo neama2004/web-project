@@ -1,17 +1,17 @@
 // ===================== Dark Mode Toggle =====================
 document.addEventListener("DOMContentLoaded", function () {
   // Dark mode toggle functionality
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  let darkModeToggle = document.getElementById("dark-mode-toggle");
 
   // Load saved dark mode preference
   if (darkModeToggle) {
-    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    let savedDarkMode = localStorage.getItem("darkMode") === "true";
     darkModeToggle.checked = savedDarkMode;
     document.body.classList.toggle("dark-mode", savedDarkMode);
 
     // Toggle dark mode when checkbox changes
     darkModeToggle.addEventListener("change", function () {
-      const isDarkMode = this.checked;
+      let isDarkMode = this.checked;
       document.body.classList.toggle("dark-mode", isDarkMode);
       localStorage.setItem("darkMode", isDarkMode);
 
@@ -22,20 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateDarkModeElements(isDarkMode) {
     // Additional dark mode element updates if needed
-    const sidebar = document.querySelector(".user-profile-sidebar");
+    let sidebar = document.querySelector(".user-profile-sidebar");
     if (sidebar) {
       sidebar.classList.toggle("dark-mode", isDarkMode);
     }
   }
 
   // ===================== User Profile Sidebar =====================
-  const profileTrigger = document.querySelector(".user-profile-trigger");
-  const sidebar = document.querySelector(".user-profile-sidebar");
-  const overlay = document.createElement("div");
+  let profileTrigger = document.querySelector(".user-profile-trigger");
+  let sidebar = document.querySelector(".user-profile-sidebar");
+  let overlay = document.createElement("div");
   overlay.className = "sidebar-overlay";
   document.body.appendChild(overlay);
-  const closeBtn = document.querySelector(".close-sidebar");
-  const logoutBtn = document.querySelector(".logout-btn");
+  let closeBtn = document.querySelector(".close-sidebar");
+  let logoutBtn = document.querySelector(".logout-btn");
 
   // Track sidebar state
   let isSidebarOpen = false;
@@ -109,11 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===================== Cart Functionality =====================
   let cartCount = 0;
-  const cartCountElement = document.getElementById("cart-count");
-  const cartBtn = document.querySelector(".cart-btn");
+  let cartCountElement = document.getElementById("cart-count");
+  let cartBtn = document.querySelector(".cart-btn");
 
   // Load cart from localStorage
-  const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+  let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
   cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
   updateCartCount();
 
@@ -127,14 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", function (e) {
     if (e.target.classList.contains("add-to-cart")) {
       e.preventDefault();
-      const productElement = e.target.closest(".product");
-      const productId = productElement.dataset.id || Date.now().toString();
-      const productName = productElement.querySelector("h3").textContent;
-      const productPrice = parseFloat(
+      let productElement = e.target.closest(".product");
+      let productId = productElement.dataset.id || Date.now().toString();
+      let productName = productElement.querySelector("h3").textContent;
+      let productPrice = parseFloat(
         productElement.querySelector("p").textContent.replace("$", "")
       );
-      const productImage = productElement.querySelector("img").src;
-      const productCategory = productElement.classList[1] || "uncategorized";
+      let productImage = productElement.querySelector("img").src;
+      let productCategory = productElement.classList[1] || "uncategorized";
 
       // Add to cart
       addToCart({
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCartCount();
 
       // Add visual feedback
-      const originalText = e.target.textContent;
+      let originalText = e.target.textContent;
       e.target.textContent = "Added!";
       e.target.classList.add("added");
       setTimeout(() => {
@@ -166,8 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addToCart(product) {
-    const cart = getCart();
-    const existingItem = cart.find((item) => item.id === product.id);
+    let cart = getCart();
+    let existingItem = cart.find((item) => item.id === product.id);
 
     if (existingItem) {
       existingItem.quantity += 1;
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===================== Product Grid =====================
-  const products = [
+  let products = [
     {
       name: " Cookies Bites",
       price: 5.99,
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   function renderProducts() {
-    const productGrid = document.querySelector(".product-grid");
+    let productGrid = document.querySelector(".product-grid");
     if (!productGrid) return;
 
     // Clear existing products
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add new products
     products.forEach((product) => {
-      const productElement = document.createElement("div");
+      let productElement = document.createElement("div");
       productElement.className = `product ${product.category}`;
       productElement.dataset.id = product.id;
       productElement.innerHTML = `
@@ -279,14 +279,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===================== Auto-Scroll Products =====================
   function initializeAutoScroll() {
-    const productGrid = document.querySelector(".product-grid");
+    let productGrid = document.querySelector(".product-grid");
     if (!productGrid) return;
 
     let scrollAmount = 0;
-    const scrollStep = 1;
+    let scrollStep = 1;
     let scrollInterval;
     let isScrolling = true;
-    const scrollSpeed = 30; // milliseconds between scroll steps
+    let scrollSpeed = 30; // milliseconds between scroll steps
 
     function scrollProducts() {
       if (!isScrolling) return;
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===================== Footer Year Update =====================
   function updateFooterYear() {
-    const yearElement = document.querySelector(".footer-year");
+    let yearElement = document.querySelector(".footer-year");
     if (yearElement) {
       yearElement.textContent = new Date().getFullYear();
     }
@@ -339,10 +339,10 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFooterYear();
 
   // Check for logged in user
-  const currentUser = sessionStorage.getItem("currentUser");
+  let currentUser = sessionStorage.getItem("currentUser");
   if (currentUser) {
     // Update UI for logged in user
-    const profileIcon = document.querySelector(".profile-icon");
+    let profileIcon = document.querySelector(".profile-icon");
     if (profileIcon) {
       // profileIcon.src = currentUser.avatarUrl;
     }
@@ -355,9 +355,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let cartCount = 0;
-const cartCountElement = document.getElementById("cart-count");
+let cartCountElement = document.getElementById("cart-count");
 
-const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
 updateCartCount();
 
@@ -369,17 +369,17 @@ function updateCartCount() {
 
 // ===================== Dark Mode Toggle =====================
 // Dark mode toggle functionality
-const darkModeToggle = document.getElementById("dark-mode-toggle");
+let darkModeToggle = document.getElementById("dark-mode-toggle");
 
 // Load saved dark mode preference
 if (darkModeToggle) {
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+  let savedDarkMode = localStorage.getItem("darkMode") === "true";
   darkModeToggle.checked = savedDarkMode;
   document.body.classList.toggle("dark-mode", savedDarkMode);
 
   // Toggle dark mode when checkbox changes
   darkModeToggle.addEventListener("change", function () {
-    const isDarkMode = this.checked;
+    let isDarkMode = this.checked;
     document.body.classList.toggle("dark-mode", isDarkMode);
     localStorage.setItem("darkMode", isDarkMode);
 
@@ -390,20 +390,20 @@ if (darkModeToggle) {
 
 function updateDarkModeElements(isDarkMode) {
   // Additional dark mode element updates if needed
-  const sidebar = document.querySelector(".user-profile-sidebar");
+  let sidebar = document.querySelector(".user-profile-sidebar");
   if (sidebar) {
     sidebar.classList.toggle("dark-mode", isDarkMode);
   }
 }
 
 // ===================== User Profile Sidebar =====================
-const profileTrigger = document.querySelector(".user-profile-trigger");
-const sidebar = document.querySelector(".user-profile-sidebar");
-const overlay = document.createElement("div");
+let profileTrigger = document.querySelector(".user-profile-trigger");
+let sidebar = document.querySelector(".user-profile-sidebar");
+let overlay = document.createElement("div");
 overlay.className = "sidebar-overlay";
 document.body.appendChild(overlay);
-const closeBtn = document.querySelector(".close-sidebar");
-const logoutBtn = document.querySelector(".logout-btn");
+let closeBtn = document.querySelector(".close-sidebar");
+let logoutBtn = document.querySelector(".logout-btn");
 
 // Track sidebar state
 let isSidebarOpen = false;

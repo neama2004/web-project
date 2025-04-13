@@ -1,3 +1,4 @@
+/* ===================== Global Styles ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,100 @@ body {
   overflow-x: hidden;
 }
 
+.dark-mode {
+  background: #071952;
+  color: #EBF4F6;
+}
+
+/* ===================== Dark Mode Specific Styles ===================== */
+.dark-mode h2,
+.dark-mode h3 {
+  color: #EBF4F6;
+}
+
+.dark-mode a {
+  color: #EBF4F6;
+}
+
+.dark-mode a:hover {
+  color: #3caea3;
+}
+
+.dark-mode #afterHeader {
+  background-color: #071952;
+}
+
+/* ===================== Cart Dark Mode Styles ===================== */
+.dark-mode .cart-container {
+  background: #071952;
+}
+
+.dark-mode #cart-items,
+.dark-mode #totalOrder {
+  background: #0a2a7a;
+  color: #EBF4F6;
+  box-shadow: 0 0 10px rgba(235, 244, 246, 0.1);
+}
+
+.dark-mode .cart-details,
+.dark-mode .cart-header,
+.dark-mode .cart-column,
+.dark-mode .total {
+  color: #EBF4F6;
+}
+
+.dark-mode .pmbtn {
+  background-color: #0a2a7a;
+  border: 1px solid #3caea3;
+  color: #EBF4F6;
+}
+
+.dark-mode .pmbtn:hover {
+  background-color: #3caea3;
+  color: #071952;
+}
+
+.dark-mode input[type="number"] {
+  background: #0a2a7a;
+  color: #EBF4F6;
+  border: 1px solid #3caea3;
+}
+
+.dark-mode .remove-btn {
+  background-color: #0a2a7a;
+  color: #EBF4F6;
+}
+
+.dark-mode .remove-btn:hover {
+  background-color: #3caea3;
+  color: #EBF4F6;
+}
+
+.dark-mode .checkout-btn {
+  background-color: #3caea3;
+  color: #071952;
+}
+
+.dark-mode .checkout-btn:hover {
+  background-color: #329f94;
+  color: #EBF4F6;
+}
+
+.dark-mode .cart-item {
+  border-bottom: 1px solid #0d3a9a;
+}
+
+/* ===================== Modal Dark Mode Styles ===================== */
+.dark-mode #modal-content {
+  background-color: #0a2a7a;
+  color: #EBF4F6;
+}
+
+.dark-mode #modal-text {
+  color: #EBF4F6;
+}
+
+/* Rest of your existing CSS remains unchanged */
 h2 {
   padding-top: 20px;
 }
@@ -29,8 +124,6 @@ a:hover {
   text-decoration: underline;
   color: #088395;
 }
-
-
 
 #afterHeader {
   margin-top: 100px;
@@ -74,7 +167,6 @@ a:hover {
   background: #EBF4F6;
 }
 
-
 #icon-container{
   display: flex;
   align-items: center;
@@ -95,9 +187,6 @@ a:hover {
   text-align: center;
 }
 
-
-
-
 header {
   position: fixed;
   top: 0;
@@ -109,6 +198,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.dark-mode header {
+  background: rgba(7, 25, 82, 0.95);
 }
 
 #header-container {
@@ -183,6 +276,11 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dark-mode .cart-btn {
+  background: #0a2a7a;
+  color: #EBF4F6;
 }
 
 .cart-btn:hover {
@@ -362,11 +460,6 @@ nav ul li a:hover {
   visibility: visible;
 }
 
-
-
-
-
-
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
@@ -394,14 +487,16 @@ nav ul li a:hover {
   }
 }
 
-
-
 footer {
   background: linear-gradient(135deg, #088395 0%, #071952 100%);
   color: #EBF4F6;
   padding: 60px 0 0;
   width: 100%;
   overflow: hidden;
+}
+
+.dark-mode footer {
+  background: linear-gradient(135deg, #0a2a7a 0%, #071952 100%);
 }
 
 .footer-container {
@@ -472,7 +567,6 @@ footer {
   width: 100%;
 }
 
-/* ===================== Social Media Icons in Footer ===================== */
 .social-links {
   display: flex;
   gap: 10px;
@@ -515,6 +609,11 @@ footer {
   border: none;
   border-radius: 5px;
   background: rgba(235, 244, 246, 0.9);
+}
+
+.dark-mode .newsletter input {
+  background: #0a2a7a;
+  color: #EBF4F6;
 }
 
 .newsletter button {
@@ -576,7 +675,6 @@ footer {
   z-index: 1;
 }
 
-/* Animation for footer links */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -590,7 +688,6 @@ footer {
   animation: float 1.2s ease-in-out infinite;
 }
 
-/* ===================== Advanced Media Queries ===================== */
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -650,19 +747,6 @@ footer {
   }
 }
 
-/* ===================== Animations ===================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===================== Animations ===================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -708,8 +792,6 @@ footer {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
-
 
 #item_col{
   width: 100%;

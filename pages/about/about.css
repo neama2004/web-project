@@ -1,19 +1,41 @@
+/* ===================== Global Styles ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #EBF4F6;
+  background: #EBF4F6;
+  color: #088395;
+  overflow-x: hidden;
+  padding-top: 80px; /* Added for fixed header */
 }
 
-#img {
-  width: 28px;
-  height: 28px;
+.dark-mode {
+  background: #071952;
+  color: #EBF4F6;
+}
+
+/* ===================== Header Dark Mode Styles ===================== */
+.dark-mode header {
+  background: rgba(7, 25, 82, 0.95);
+}
+
+.dark-mode .logo,
+.dark-mode nav ul li a {
+  color: #EBF4F6;
+}
+
+.dark-mode nav ul li a:hover {
+  background: rgba(235, 244, 246, 0.1);
+}
+
+.dark-mode #img {
   filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
 }
 
 /* ===================== Dark/Light Mode Toggle ===================== */
@@ -53,30 +75,29 @@ body {
   background: #EBF4F6;
 }
 
-
-#icon-container{
+#icon-container {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-left: 20px;
 }
-.iconSpan{
+
+.iconSpan {
   color: #EBF4F6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.iconSpan span{
+
+.iconSpan span {
   background-color: #309187;
   border-radius: 30px;
   width: 18px;
   text-align: center;
 }
 
-
-
-
+/* ===================== Header Styles ===================== */
 header {
   position: fixed;
   top: 0;
@@ -164,6 +185,11 @@ nav ul li a:hover {
   justify-content: center;
 }
 
+.dark-mode .cart-btn {
+  background: #0a2a7a;
+  color: #EBF4F6;
+}
+
 .cart-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -194,7 +220,7 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 
-/* ===================== User Profile Sidebar - Fixed Styles ===================== */
+/* ===================== User Profile Sidebar ===================== */
 .user-profile-sidebar {
   position: fixed;
   top: 0;
@@ -318,6 +344,10 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
+.dark-mode .logout-btn {
+  background: #088395;
+}
+
 .logout-btn:hover {
   background: #329f94;
   transform: translateY(-2px);
@@ -341,82 +371,74 @@ nav ul li a:hover {
   visibility: visible;
 }
 
-
-
-
-
-
-@media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-  
-  nav ul {
-    gap: 10px;
-  }
-  
-  nav ul li a {
-    padding: 8px 12px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  #header-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-#about-header .about-header{
+/* ===================== About Page Specific Styles ===================== */
+#about-header {
   background-image: url(../../images/nm.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 14px;
+  position: relative;
 }
 
-     #about-header {
-      background-image: url(../../images/nm.jpg);
-      width: 100%;
-      height: 40vh;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 14px;
-    
-  }
-  #about-header h2 {
-      font-size: 75px;
-      color: #071952;
-  
-  }
-  #about-head {
-      display: flex;
-      align-items: center;
-  }
- #about{
+.dark-mode #about-header {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../../images/nm.jpg) no-repeat center center/cover;
+}
+
+#about-header h2 {
+  font-size: 75px;
+  color: #071952;
+  position: relative;
+  z-index: 1;
+}
+
+.dark-mode #about-header h2 {
+  color: #EBF4F6;
+}
+
+#about-head {
+  display: flex;
+  align-items: center;
+}
+
+#about {
   display: flex;
   flex-direction: row;
   padding: 40px 80px;
   gap: 30px;
   flex-wrap: wrap;
- }    
- #about img{
-      width: 50%;
-      height: auto;
-      margin: 10px;
-      border-radius: 8px;
-  }
-  #about div {
-      flex:1;
-      padding-left: 40px;
-      line-height: 1.8;
-  }
-  h2 {
+  background: #EBF4F6;
+}
+
+.dark-mode #about {
+  background: #071952;
+}
+
+#about img {
+  width: 50%;
+  height: auto;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dark-mode #about img {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#about div {
+  flex: 1;
+  padding-left: 40px;
+  line-height: 1.8;
+}
+
+h2 {
   display: block;
   font-size: 1.5em;
   margin-block-start: 0.83em;
@@ -424,17 +446,26 @@ nav ul li a:hover {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bolder;
-color: #088395;
+  color: #088395;
 }
-p{
+
+.dark-mode h2 {
+  color: #EBF4F6;
+}
+
+p {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   color: #088395;
-
 }
+
+.dark-mode p {
+  color: #EBF4F6;
+}
+
 @media (max-width: 768px) {
   #about {
     flex-direction: column;
@@ -449,28 +480,47 @@ p{
     padding-left: 0;
   }
 }
-#video-section{
+
+#video-section {
   padding: 40px 20px;
   text-align: center;
+  background: #d0e8ed;
 }
-#video-section h2{
+
+.dark-mode #video-section {
+  background: #0a2a7a;
+}
+
+#video-section h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
+
 #video-section .product-link {
   color: #088395;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
-#video-section .product-link:hover{
+
+.dark-mode #video-section .product-link {
+  color: #3caea3;
+}
+
+#video-section .product-link:hover {
   color: #055f6c;
 }
-.video-container{
+
+.dark-mode #video-section .product-link:hover {
+  color: #2d8b8b;
+}
+
+.video-container {
   max-width: 1000px;
   margin: 0 auto;
   overflow: hidden;
   height: 500px; 
 }
+
 .video-container video {
   object-fit: cover;
   width: 95%;
@@ -478,12 +528,22 @@ p{
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+.dark-mode .video-container video {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* ===================== Footer Styles ===================== */
 footer {
   background: linear-gradient(135deg, #088395 0%, #071952 100%);
   color: #EBF4F6;
   padding: 60px 0 0;
   position: relative;
   overflow: hidden;
+}
+
+.dark-mode footer {
+  background: linear-gradient(135deg, #0a2a7a 0%, #071952 100%);
 }
 
 .footer-container {
@@ -534,6 +594,10 @@ footer {
   position: relative;
 }
 
+.dark-mode .footer-col ul li a {
+  color: #EBF4F6;
+}
+
 .footer-col ul li a:hover {
   color: #d0e8ed;
   transform: translateX(5px);
@@ -554,7 +618,6 @@ footer {
   width: 100%;
 }
 
-/* ===================== Social Media Icons in Footer ===================== */
 .social-links {
   display: flex;
   gap: 10px;
@@ -597,6 +660,12 @@ footer {
   border: none;
   border-radius: 5px;
   background: rgba(235, 244, 246, 0.9);
+  color: #088395;
+}
+
+.dark-mode .newsletter input {
+  background: rgba(7, 25, 82, 0.9);
+  color: #EBF4F6;
 }
 
 .newsletter button {
@@ -608,6 +677,10 @@ footer {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.dark-mode .newsletter button {
+  background: #088395;
 }
 
 .newsletter button:hover {
@@ -622,7 +695,12 @@ footer {
   background: rgba(0,0,0,0.2);
   position: relative;
 }
-.footer-bottom p{
+
+.dark-mode .footer-bottom {
+  background: rgba(0,0,0,0.3);
+}
+
+.footer-bottom p {
   color: #EBF4F6;
 }
 
@@ -672,18 +750,18 @@ footer {
   animation: float 1.2s ease-in-out infinite;
 }
 
-/* ===================== Advanced Media Queries ===================== */
+/* ===================== Responsive Design ===================== */
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .hero h1 {
-    font-size: 42px;
-  }
-  
   .user-profile-sidebar {
     width: 300px;
+  }
+  
+  #about-header h2 {
+    font-size: 50px;
   }
 }
 
@@ -692,16 +770,21 @@ footer {
     margin: 10px 0;
   }
   
-  .hero-content {
-    padding: 30px;
-  }
-  
-  .feature-card {
-    max-width: 100%;
-  }
-  
   .footer-col h4::after {
     width: 30px;
+  }
+  
+  header {
+    padding: 15px 20px;
+  }
+  
+  nav ul {
+    gap: 10px;
+  }
+  
+  nav ul li a {
+    padding: 8px 12px;
+    font-size: 16px;
   }
 }
 
@@ -710,12 +793,14 @@ footer {
     grid-template-columns: 1fr;
   }
   
-  .hero h1 {
-    font-size: 32px;
+  #header-container {
+    flex-direction: column;
+    gap: 15px;
   }
   
-  .hero p {
-    font-size: 16px;
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .footer-col {
@@ -729,6 +814,10 @@ footer {
   
   .social-links {
     justify-content: center;
+  }
+  
+  #about-header h2 {
+    font-size: 36px;
   }
 }
 

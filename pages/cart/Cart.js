@@ -206,7 +206,19 @@ if (darkModeToggle) {
 }
 
 function updateDarkModeElements(isDarkMode) {
-  // Additional dark mode element updates if needed
+  // Update modal for dark mode
+  const modalContent = document.getElementById("modal-content");
+  if (modalContent) {
+    if (isDarkMode) {
+      modalContent.style.backgroundColor = "#0a2a7a";
+      modalContent.style.color = "#EBF4F6";
+    } else {
+      modalContent.style.backgroundColor = "white";
+      modalContent.style.color = "#071952";
+    }
+  }
+  
+  // Update sidebar
   const sidebar = document.querySelector(".user-profile-sidebar");
   if (sidebar) {
     sidebar.classList.toggle("dark-mode", isDarkMode);

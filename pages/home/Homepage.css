@@ -15,14 +15,35 @@ body {
   padding-top: 80px; /* Added for fixed header */
 }
 
+.dark-mode {
+  background: #071952;
+  color: #EBF4F6;
+}
 
+/* ===================== Header Dark Mode Styles ===================== */
+.dark-mode header {
+  background: rgba(7, 25, 82, 0.95);
+}
+
+.dark-mode .logo,
+.dark-mode nav ul li a {
+  color: #EBF4F6;
+}
+
+.dark-mode nav ul li a:hover {
+  background: rgba(235, 244, 246, 0.1);
+}
+
+.dark-mode #img {
+  filter: brightness(0) invert(1);
+}
 
 /* ===================== Hero Section with Background Image ===================== */
 .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('../../images/nm.jpg') no-repeat center center/cover;
-  height: calc(100vh - 80px);
+    url('../../images/nm.jpg')  no-repeat center center/cover;;
+  height: calc(90vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +54,7 @@ body {
 .dark-mode .hero {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../../images/nm.jpg') no-repeat center center/cover;
+    url('../../images/nm.jpg')  no-repeat center 30%/cover;;
 }
 
 .hero-content {
@@ -88,6 +109,15 @@ body {
 .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(7, 25, 82, 0.5);
+}
+
+.dark-mode .btn {
+  background: #3caea3;
+  color: #071952;
+}
+
+.dark-mode .btn:hover {
+  background: #329f94;
 }
 
 /* ===================== Product Grid ===================== */
@@ -164,7 +194,7 @@ body {
 }
 
 .dark-mode .product h3 {
-  color: #EBF4F6;
+  color: #071952;
 }
 
 .product p {
@@ -175,7 +205,7 @@ body {
 }
 
 .dark-mode .product p {
-  color: #EBF4F6;
+  color: #071952;
 }
 
 .product .add-to-cart {
@@ -208,7 +238,7 @@ body {
 }
 
 .dark-mode .testimonials h2 {
-  color: #EBF4F6;
+  color: #071952;
 }
 
 .testimonial-carousel {
@@ -233,6 +263,10 @@ body {
   flex: 0 0 auto;
 }
 
+.dark-mode .testimonial {
+  background: #0a2a7a;
+}
+
 .testimonial p {
   font-size: 16px;
   font-style: italic;
@@ -241,10 +275,18 @@ body {
   margin-bottom: 20px;
 }
 
+.dark-mode .testimonial p {
+  color: #EBF4F6;
+}
+
 .testimonial span {
   font-size: 14px;
   color: #071952;
   font-weight: bold;
+}
+
+.dark-mode .testimonial span {
+  color: #EBF4F6;
 }
 
 /* ===================== About Section ===================== */
@@ -345,7 +387,26 @@ body {
   color: #EBF4F6;
 }
 
+/* ===================== Footer Dark Mode Styles ===================== */
+.dark-mode footer {
+  background: linear-gradient(135deg, #0a2a7a 0%, #071952 100%);
+}
 
+.dark-mode .footer-col ul li a {
+  color: #EBF4F6;
+}
+
+.dark-mode .footer-col ul li a:hover {
+  color: #d0e8ed;
+}
+
+.dark-mode .footer-bottom {
+  background: rgba(0,0,0,0.3);
+}
+
+.dark-mode .footer-bottom p {
+  color: #EBF4F6;
+}
 
 /* ===================== Animations ===================== */
 @keyframes fadeIn {
@@ -361,8 +422,6 @@ body {
 
 /* ===================== Responsive Design ===================== */
 @media (max-width: 992px) {
-  
-  
   .hero h1 {
     font-size: 42px;
   }
@@ -373,8 +432,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  
-  
   .hero {
     height: 60vh;
     background-position: 60% center;
@@ -407,8 +464,6 @@ body {
 }
 
 @media (max-width: 576px) {
-  
-  
   .hero h1 {
     font-size: 32px;
   }
@@ -416,8 +471,6 @@ body {
   .hero p {
     font-size: 16px;
   }
-  
-  
 }
 
 /* ===================== Dark/Light Mode Toggle ===================== */
@@ -457,7 +510,6 @@ body {
   background: #EBF4F6;
 }
 
-
 #icon-container{
   display: flex;
   align-items: center;
@@ -477,9 +529,6 @@ body {
   width: 18px;
   text-align: center;
 }
-
-
-
 
 header {
   position: fixed;
@@ -745,11 +794,6 @@ nav ul li a:hover {
   visibility: visible;
 }
 
-
-
-
-
-
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
@@ -776,8 +820,6 @@ nav ul li a:hover {
     justify-content: center;
   }
 }
-
-
 
 footer {
   background: linear-gradient(135deg, #088395 0%, #071952 100%);
@@ -855,7 +897,6 @@ footer {
   width: 100%;
 }
 
-/* ===================== Social Media Icons in Footer ===================== */
 .social-links {
   display: flex;
   gap: 10px;
@@ -959,7 +1000,6 @@ footer {
   z-index: 1;
 }
 
-/* Animation for footer links */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -973,7 +1013,6 @@ footer {
   animation: float 1.2s ease-in-out infinite;
 }
 
-/* ===================== Advanced Media Queries ===================== */
 @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -1033,7 +1072,6 @@ footer {
   }
 }
 
-/* ===================== Animations ===================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
