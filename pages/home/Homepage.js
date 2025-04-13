@@ -94,9 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("You have been logged out");
       toggleSidebar(false);
 
-      // Additional logout logic can go here
-      // sessionStorage.removeItem('currentUser');
-      // window.location.href = 'login.html';
+      window.location.href = 'login.html';
     });
   }
 

@@ -94,7 +94,7 @@ signInForm.addEventListener("submit", (e) => {
     }
 });
 
-// Dark Mode Toggle (if exists on page)
+// Dark Mode Toggle
 let darkModeToggle = document.getElementById('dark-mode-toggle');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('change', function() {

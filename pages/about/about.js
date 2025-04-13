@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Card functionality (if needed)
+  // Card functionality
   cards.forEach((card) => {
     card.addEventListener("click", function () {
       cards.forEach((otherCard) => {

@@ -67,7 +67,7 @@ function displayCart() {
     $(".total").text("Total:$0.00");
     $(".checkout-btn").hide();
     cartContainer.innerHTML =
-      "<h2>Your cart is empty...</h2><h2>Add an item to see it here!</h2><img src='../../images/cart/empty_cart.jpg' alt='empty cart' style='width: 400px; height: 400px;'>";
+      "<h2>Your cart is empty...</h2><h2>Add an item to see it here!</h2><img src='../../images/cart/empty_cart.png' alt='empty cart' style='width: 400px; height: 400px;'>";
     cartContainer.style.textAlign = "center";
     return;
   }
@@ -217,7 +217,7 @@ function updateDarkModeElements(isDarkMode) {
       modalContent.style.color = "#071952";
     }
   }
-  
+
   // Update sidebar
   let sidebar = document.querySelector(".user-profile-sidebar");
   if (sidebar) {

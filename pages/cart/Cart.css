@@ -44,7 +44,7 @@ body {
 
 .dark-mode #cart-items,
 .dark-mode #totalOrder {
-  background: #0a2a7a;
+  background: rgb(10, 42, 122);
   color: #EBF4F6;
   box-shadow: 0 0 10px rgba(235, 244, 246, 0.1);
 }
@@ -655,7 +655,6 @@ footer {
 }
 
 .footer-wave {
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
