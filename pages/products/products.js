@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const productList = document.querySelector(".productlist");
-  const filterItems = document.querySelectorAll("#filterlist li");
-  const modal = document.querySelector(".productmodal");
-  const modalName = document.getElementById("modalname");
-  const modalImage = document.getElementById("modalimage");
-  const modalDescription = document.getElementById("modaldescription");
-  const modalPrice = document.getElementById("modalprice");
-  const addToCartBtn = document.getElementById("add-to-cart");
+  let productList = document.querySelector(".productlist");
+  let filterItems = document.querySelectorAll("#filterlist li");
+  let modal = document.querySelector(".productmodal");
+  let modalName = document.getElementById("modalname");
+  let modalImage = document.getElementById("modalimage");
+  let modalDescription = document.getElementById("modaldescription");
+  let modalPrice = document.getElementById("modalprice");
+  let addToCartBtn = document.getElementById("add-to-cart");
 
   let products = [];
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentProduct = null;
 
   // Initialize dark mode
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
-  
+  let darkModeToggle = document.getElementById("dark-mode-toggle");
+  let savedDarkMode = localStorage.getItem("darkMode") === "true";
+
   if (darkModeToggle) {
     darkModeToggle.checked = savedDarkMode;
     document.body.classList.toggle("dark-mode", savedDarkMode);
     updateDarkModeElements(savedDarkMode);
-    
+
     darkModeToggle.addEventListener("change", function () {
-      const isDarkMode = this.checked;
+      let isDarkMode = this.checked;
       document.body.classList.toggle("dark-mode", isDarkMode);
       localStorage.setItem("darkMode", isDarkMode);
       updateDarkModeElements(isDarkMode);
@@ -31,19 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateDarkModeElements(isDarkMode) {
-    const sidebar = document.querySelector(".user-profile-sidebar");
+    let sidebar = document.querySelector(".user-profile-sidebar");
     if (sidebar) {
       sidebar.classList.toggle("dark-mode", isDarkMode);
     }
   }
 
   // User Profile Sidebar functionality
-  const profileTrigger = document.querySelector(".user-profile-trigger");
-  const sidebar = document.querySelector(".user-profile-sidebar");
-  const overlay = document.querySelector(".sidebar-overlay");
-  const closeBtn = document.querySelector(".close-sidebar");
-  const logoutBtn = document.querySelector(".logout-btn");
-  
+  let profileTrigger = document.querySelector(".user-profile-trigger");
+  let sidebar = document.querySelector(".user-profile-sidebar");
+  let overlay = document.querySelector(".sidebar-overlay");
+  let closeBtn = document.querySelector(".close-sidebar");
+  let logoutBtn = document.querySelector(".logout-btn");
+
   let isSidebarOpen = false;
 
   function toggleSidebar(shouldOpen) {
@@ -105,17 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Cart count functionality
   let cartCount = 0;
-  const cartCountElement = document.getElementById("cart-count");
-  
+  let cartCountElement = document.getElementById("cart-count");
+
   function updateCartCount() {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
-    
+
     if (cartCountElement) {
       cartCountElement.textContent = cartCount;
     }
   }
-  
+
   updateCartCount();
 
   // Product functionality
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     productList.innerHTML = "";
 
     productsToDisplay.forEach((product) => {
-      const productCard = document.createElement("div");
+      let productCard = document.createElement("div");
       productCard.className = "product-card";
 
       productCard.innerHTML = `
@@ -161,10 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      const cartBtn = productCard.querySelector(".add-cart-btn");
+      let cartBtn = productCard.querySelector(".add-cart-btn");
       cartBtn.addEventListener("click", (e) => {
         e.stopPropagation();
         addToCart(product);
+        cartBtn.textContent = "Added";
+        setTimeout(() => {
+          cartBtn.textContent = "Add to Cart";
+        }, 1000);
       });
     });
   }
@@ -178,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentFilter === "all") {
         displayProducts(products);
       } else {
-        const filteredProducts = products.filter((product) =>
+        let filteredProducts = products.filter((product) =>
           product.allergyFree.includes(currentFilter)
         );
         displayProducts(filteredProducts);
@@ -186,12 +190,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const searchBar = document.getElementById("search-bar");
+  let searchBar = document.getElementById("search-bar");
 
   searchBar.addEventListener("input", function () {
-    const query = searchBar.value.toLowerCase().trim();
+    let query = searchBar.value.toLowerCase().trim();
 
-    const filteredProducts = products.filter((product) =>
+    let filteredProducts = products.filter((product) =>
       product.name.toLowerCase().includes(query)
     );
 
@@ -225,7 +229,15 @@ document.addEventListener("DOMContentLoaded", function () {
   addToCartBtn.addEventListener("click", () => {
     if (currentProduct) {
       addToCart(currentProduct);
-      closeModal();
+      // Update button text temporarily
+      addToCartBtn.textContent = "Added";
+      setTimeout(() => {
+        addToCartBtn.textContent = "Add to Cart";
+        closeModal();
+      }, 1000);
+      // Update cart count
+      cartCount++;
+      updateCartCount();
     }
   });
 
@@ -240,6 +252,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-    alert(`${product.name} added to cart!`);
   }
 });

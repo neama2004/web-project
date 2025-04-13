@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Initialize dark mode
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+  let darkModeToggle = document.getElementById("dark-mode-toggle");
+  let savedDarkMode = localStorage.getItem("darkMode") === "true";
   
   if (darkModeToggle) {
     darkModeToggle.checked = savedDarkMode;
@@ -9,7 +9,7 @@ $(document).ready(function () {
     updateDarkModeElements(savedDarkMode);
     
     darkModeToggle.addEventListener("change", function () {
-      const isDarkMode = this.checked;
+      let isDarkMode = this.checked;
       document.body.classList.toggle("dark-mode", isDarkMode);
       localStorage.setItem("darkMode", isDarkMode);
       updateDarkModeElements(isDarkMode);
@@ -17,7 +17,7 @@ $(document).ready(function () {
   }
 
   function updateDarkModeElements(isDarkMode) {
-    const sidebar = document.querySelector(".user-profile-sidebar");
+    let sidebar = document.querySelector(".user-profile-sidebar");
     if (sidebar) {
       sidebar.classList.toggle("dark-mode", isDarkMode);
     }
@@ -45,10 +45,10 @@ $(document).ready(function () {
 
   // Cart count functionality
   let cartCount = 0;
-  const cartCountElement = document.getElementById("cart-count");
+  let cartCountElement = document.getElementById("cart-count");
   
   function updateCartCount() {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
     
     if (cartCountElement) {
@@ -59,11 +59,11 @@ $(document).ready(function () {
   updateCartCount();
 
   // User Profile Sidebar functionality
-  const profileTrigger = document.querySelector(".user-profile-trigger");
-  const sidebar = document.querySelector(".user-profile-sidebar");
-  const overlay = document.querySelector(".sidebar-overlay");
-  const closeBtn = document.querySelector(".close-sidebar");
-  const logoutBtn = document.querySelector(".logout-btn");
+  let profileTrigger = document.querySelector(".user-profile-trigger");
+  let sidebar = document.querySelector(".user-profile-sidebar");
+  let overlay = document.querySelector(".sidebar-overlay");
+  let closeBtn = document.querySelector(".close-sidebar");
+  let logoutBtn = document.querySelector(".logout-btn");
   
   let isSidebarOpen = false;
 

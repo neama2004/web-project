@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* ========== DARK MODE ========== */
 function initDarkMode() {
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  let darkModeToggle = document.getElementById("dark-mode-toggle");
   if (!darkModeToggle) {
       console.warn("Dark mode toggle not found");
       return;
   }
 
   try {
-      const savedDarkMode = localStorage.getItem("darkMode") === "true";
+      let savedDarkMode = localStorage.getItem("darkMode") === "true";
       darkModeToggle.checked = savedDarkMode;
       document.body.classList.toggle("dark-mode", savedDarkMode);
 
       darkModeToggle.addEventListener("change", function() {
-          const isDarkMode = this.checked;
+          let isDarkMode = this.checked;
           document.body.classList.toggle("dark-mode", isDarkMode);
           localStorage.setItem("darkMode", isDarkMode);
       });
@@ -37,11 +37,11 @@ function initDarkMode() {
 
 /* ========== SIDEBAR ========== */
 function initSidebar() {
-  const sidebar = document.querySelector(".user-profile-sidebar");
-  const overlay = document.querySelector(".sidebar-overlay");
-  const profileTrigger = document.querySelector(".user-profile-trigger");
-  const closeBtn = document.querySelector(".close-sidebar");
-  const logoutBtn = document.querySelector(".logout-btn");
+  let sidebar = document.querySelector(".user-profile-sidebar");
+  let overlay = document.querySelector(".sidebar-overlay");
+  let profileTrigger = document.querySelector(".user-profile-trigger");
+  let closeBtn = document.querySelector(".close-sidebar");
+  let logoutBtn = document.querySelector(".logout-btn");
 
   if (!sidebar || !overlay || !profileTrigger || !closeBtn) {
       console.warn("Sidebar elements not found");
@@ -80,7 +80,7 @@ function handleLogout() {
 /* ========== USER PROFILE ========== */
 function initProfilePage() {
   try {
-      const currentUser = loadCurrentUser();
+      let currentUser = loadCurrentUser();
       populateUserData(currentUser);
   } catch (error) {
       console.error("Profile page initialization failed:", error);
@@ -89,8 +89,8 @@ function initProfilePage() {
 
 function loadCurrentUser() {
   try {
-      const storedUser = sessionStorage.getItem("currentUser");
-      const parsedUser = storedUser ? JSON.parse(storedUser) : {};
+      let storedUser = sessionStorage.getItem("currentUser");
+      let parsedUser = storedUser ? JSON.parse(storedUser) : {};
       
       return {
           name: parsedUser.name || "Guest User",
@@ -139,7 +139,7 @@ function populateUserData(user) {
   setTextContent("join-date", formatDate(user.joinDate));
 
   // Statistics
-  const orders = getOrderHistory(user.email);
+  let orders = getOrderHistory(user.email);
   setTextContent("total-orders", orders.length);
   setTextContent("loyalty-points", user.loyaltyPoints || 0);
   setTextContent("allergies-count", user.allergies?.length || 0);
@@ -151,7 +151,7 @@ function populateUserData(user) {
 }
 
 function setTextContent(elementId, value) {
-  const element = document.getElementById(elementId);
+  let element = document.getElementById(elementId);
   if (element) element.textContent = value;
 }
 
@@ -215,7 +215,7 @@ function setupModalTriggers() {
 /* ========== ORDER HISTORY ========== */
 function getOrderHistory(userEmail) {
   try {
-      const orders = JSON.parse(localStorage.getItem("orders")) || [];
+      let orders = JSON.parse(localStorage.getItem("orders")) || [];
       return userEmail ? orders.filter(order => order.userEmail === userEmail) : [];
   } catch {
       return [];
@@ -223,7 +223,7 @@ function getOrderHistory(userEmail) {
 }
 
 function displayOrderHistory(orders = []) {
-  const container = document.getElementById("order-history-container");
+  let container = document.getElementById("order-history-container");
   if (!container) return;
 
   if (!orders.length) {
@@ -246,7 +246,7 @@ function displayOrderHistory(orders = []) {
 }
 
 function createOrderCard(order) {
-  const orderDate = order.date ? new Date(order.date).toLocaleDateString() : "Unknown date";
+  let orderDate = order.date ? new Date(order.date).toLocaleDateString() : "Unknown date";
   
   return `
       <div class="order-card">
@@ -289,8 +289,8 @@ function createOrderItem(item) {
 function setupOrderActionHandlers() {
   document.querySelectorAll(".order-action-btn").forEach(button => {
       button.addEventListener("click", function() {
-          const orderId = this.dataset.orderId;
-          const action = this.classList.contains("reorder") ? "reorder" : 
+          let orderId = this.dataset.orderId;
+          let action = this.classList.contains("reorder") ? "reorder" : 
                         this.classList.contains("track") ? "track" : "details";
           handleOrderAction(orderId, action);
       });
@@ -298,8 +298,8 @@ function setupOrderActionHandlers() {
 }
 
 function handleOrderAction(orderId, action) {
-  const orders = getOrderHistory();
-  const order = orders.find(o => o.id === orderId);
+  let orders = getOrderHistory();
+  let order = orders.find(o => o.id === orderId);
 
   if (!order) {
       showNotification("Order not found", "error");
@@ -321,11 +321,11 @@ function handleOrderAction(orderId, action) {
 
 function reorderItems(order) {
   try {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
       let addedCount = 0;
 
       (order.items || []).forEach(item => {
-          const existingItem = cart.find(ci => ci.id === item.id);
+          let existingItem = cart.find(ci => ci.id === item.id);
           if (existingItem) {
               existingItem.quantity += item.quantity || 1;
           } else {
@@ -350,7 +350,7 @@ function reorderItems(order) {
 }
 
 function trackOrder(order) {
-  const statusMessages = {
+  let statusMessages = {
       processing: "Your order is being prepared",
       shipped: `Shipped on ${order.shippingDate ? new Date(order.shippingDate).toLocaleDateString() : "unknown date"}`,
       delivered: `Delivered on ${order.deliveryDate ? new Date(order.deliveryDate).toLocaleDateString() : "unknown date"}`,
@@ -361,10 +361,10 @@ function trackOrder(order) {
 }
 
 function showOrderDetails(order) {
-  const modalContent = document.getElementById("order-details-content");
+  let modalContent = document.getElementById("order-details-content");
   if (!modalContent) return;
 
-  const orderDate = order.date ? new Date(order.date).toLocaleDateString() : "Unknown date";
+  let orderDate = order.date ? new Date(order.date).toLocaleDateString() : "Unknown date";
   
   modalContent.innerHTML = `
       <h3>Order #${order.id || "N/A"}</h3>
@@ -398,7 +398,7 @@ function showOrderDetails(order) {
 
 /* ========== ALLERGY MANAGEMENT ========== */
 function displayAllergyTags(allergies = []) {
-  const container = document.getElementById("allergy-tags-container");
+  let container = document.getElementById("allergy-tags-container");
   if (!container) return;
 
   if (!allergies.length) {
@@ -414,8 +414,8 @@ function displayAllergyTags(allergies = []) {
 }
 
 function showAllergyManagementModal(user) {
-  const modal = document.getElementById("allergy-modal");
-  const content = document.getElementById("allergy-modal-content");
+  let modal = document.getElementById("allergy-modal");
+  let content = document.getElementById("allergy-modal-content");
   if (!modal || !content) return;
   
   content.innerHTML = `
@@ -440,12 +440,12 @@ function showAllergyManagementModal(user) {
 
   document.getElementById("allergy-form").addEventListener("submit", function(e) {
       e.preventDefault();
-      const checkboxes = this.querySelectorAll("input[type='checkbox']:checked");
-      const selectedAllergies = Array.from(checkboxes).map(cb => 
+      let checkboxes = this.querySelectorAll("input[type='checkbox']:checked");
+      let selectedAllergies = Array.from(checkboxes).map(cb => 
           cb.name.charAt(0).toUpperCase() + cb.name.slice(1));
       
       // Update user data
-      const updatedUser = {
+      let updatedUser = {
           ...user,
           allergies: selectedAllergies
       };
@@ -465,7 +465,7 @@ function showAllergyManagementModal(user) {
 
 /* ========== PAYMENT METHODS ========== */
 function displayPaymentMethods(paymentMethods = []) {
-  const container = document.getElementById("payment-methods-container");
+  let container = document.getElementById("payment-methods-container");
   if (!container) return;
 
   if (!paymentMethods.length) {
@@ -508,8 +508,8 @@ function displayPaymentMethods(paymentMethods = []) {
 }
 
 function showAddPaymentMethodModal(user) {
-  const modal = document.getElementById("payment-modal");
-  const content = document.getElementById("payment-modal-content");
+  let modal = document.getElementById("payment-modal");
+  let content = document.getElementById("payment-modal-content");
   if (!modal || !content) return;
   
   content.innerHTML = `
@@ -548,10 +548,10 @@ function showAddPaymentMethodModal(user) {
   document.getElementById("payment-method-form").addEventListener("submit", function(e) {
       e.preventDefault();
       
-      const cardType = document.getElementById("card-type").value;
-      const cardNumber = document.getElementById("card-number").value;
-      const cardExpiry = document.getElementById("card-expiry").value;
-      const cardName = document.getElementById("card-name").value;
+      let cardType = document.getElementById("card-type").value;
+      let cardNumber = document.getElementById("card-number").value;
+      let cardExpiry = document.getElementById("card-expiry").value;
+      let cardName = document.getElementById("card-name").value;
 
       if (!cardType || !cardNumber || !cardExpiry || !cardName) {
           showNotification("Please fill all fields", "error");
@@ -559,7 +559,7 @@ function showAddPaymentMethodModal(user) {
       }
 
       // Add to user's payment methods
-      const updatedUser = {
+      let updatedUser = {
           ...user,
           paymentMethods: [
               ...(user.paymentMethods || []),
@@ -586,7 +586,7 @@ function showAddPaymentMethodModal(user) {
 function getPaymentIconClass(paymentType) {
   if (!paymentType) return "fa-credit-card";
   
-  const type = paymentType.toLowerCase();
+  let type = paymentType.toLowerCase();
   if (type.includes("visa")) return "fa-cc-visa";
   if (type.includes("mastercard")) return "fa-cc-mastercard";
   if (type.includes("amex")) return "fa-cc-amex";
@@ -596,7 +596,7 @@ function getPaymentIconClass(paymentType) {
 
 /* ========== EDIT PROFILE ========== */
 function showEditProfileModal(user) {
-  const modal = document.getElementById("edit-profile-modal");
+  let modal = document.getElementById("edit-profile-modal");
   if (!modal) return;
 
   // Populate form with current data
@@ -613,7 +613,7 @@ function showEditProfileModal(user) {
       e.preventDefault();
 
       // Update user data
-      const updatedUser = {
+      let updatedUser = {
           ...user,
           name: document.getElementById("edit-name").value,
           email: document.getElementById("edit-email").value,
@@ -632,7 +632,7 @@ function showEditProfileModal(user) {
 
 /* ========== UTILITIES ========== */
 function showNotification(message, type = "success") {
-  const notification = document.createElement("div");
+  let notification = document.createElement("div");
   notification.className = `notification ${type}`;
   notification.innerHTML = `<p>${message}</p>`;
   document.body.appendChild(notification);
@@ -645,9 +645,9 @@ function showNotification(message, type = "success") {
 
 function updateCartCount() {
   try {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const count = cart.reduce((total, item) => total + (item.quantity || 0), 0);
-      const cartCountElement = document.getElementById("cart-count");
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let count = cart.reduce((total, item) => total + (item.quantity || 0), 0);
+      let cartCountElement = document.getElementById("cart-count");
       if (cartCountElement) {
           cartCountElement.textContent = count;
       }

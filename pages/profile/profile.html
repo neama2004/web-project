@@ -1,280 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Profile | SafeBites Market</title>
-  <link rel="stylesheet" href="profile.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-</head>
-<body>
-  <header>
-    <div id="header-container">
-      <a href="../home/Homepage.html" class="logo">🍏SafeBites Market</a>
-      <nav>
-        <ul>
-          <li><a href="../home/Homepage.html">Home</a></li>
-          <li><a href="../products/products.html">Products</a></li>
-          <li><a href="../about/about.html">About</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
-          <li>
-            <div class="theme-toggle">
-              <input type="checkbox" id="dark-mode-toggle" />
-              <label for="dark-mode-toggle" class="dark-mode-label">
-                <span>☀️</span>
-                <span>🌑</span>
-              </label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile | SafeBites Market</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <a href="../home/Homepage.html" class="logo">🍏SafeBites Market</a>
+        <nav>
+          <ul>
+            <li><a href="../home/Homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+            <li>
+              <div class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle" />
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                  <span>☀️</span>
+                  <span>🌑</span>
+                </label>
+              </div>
+            </li>
+            <div id="icon-container">
+              <div class="iconSpan">
+                <span id="cart-count">0</span>
+                <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>
+              </div>
+              <a href="#" class="user-profile-trigger" id="profile-trigger">
+                <img
+                  src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg"
+                  alt="User Profile"
+                  id="img"
+                />
+              </a>
             </div>
-          </li>
-          <div id="icon-container">
-            <div class="iconSpan">
-              <span id="cart-count">0</span>
-              <a href="../cart/Cart.html" id="cart-icon"> 🛒 </a>
-            </div>
-            <a href="#" class="user-profile-trigger" id="profile-trigger">
-              <img src="https://d1fm27ee7pjs8v.cloudfront.net/design/themes/yumbles_responsive/media/images/addons/my_changes/icons/ic-my-account-v2.svg" 
-                   alt="User Profile" 
-                   id="img" />
-            </a>
-          </div>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- User Profile Sidebar -->
-  <div class="user-profile-sidebar">
-    <div class="sidebar-header">
-      <h3>My Account</h3>
-      <button class="close-sidebar" id="close-sidebar">&times;</button>
-    </div>
-    <ul class="sidebar-menu">
-      <li><a href="../login/login.html">Login</a></li>
-      <li><a href="../profile/profile.html">Profile</a></li>
-      <li><a href="../cart/Cart.html">My Orders</a></li>
-      <li><a href="../contact/contact.html">Help Center</a></li>
-    </ul>
-    <div class="sidebar-footer">
-      <button class="logout-btn" id="logout-btn">Logout</button>
-    </div>
-  </div>
-  <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-  <!-- Main Profile Content -->
-  <main class="profile-container">
-    <div class="profile-header">
-      <div class="profile-info-container">
-        <h1 id="profile-name">Loading...</h1>
-        <p class="member-since">Member since <span id="join-date">...</span></p>
+          </ul>
+        </nav>
       </div>
-      <div class="profile-stats">
-        <div class="stat-card">
-          <div class="stat-value" id="total-orders">0</div>
-          <div class="stat-label">Total Orders</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="loyalty-points">0</div>
-          <div class="stat-label">Loyalty Points</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="allergies-count">0</div>
-          <div class="stat-label">Allergies</div>
-        </div>
+    </header>
+
+    <!-- User Profile Sidebar -->
+    <div class="user-profile-sidebar">
+      <div class="sidebar-header">
+        <h3>My Account</h3>
+        <button class="close-sidebar" id="close-sidebar">&times;</button>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="../login/login.html">Login</a></li>
+        <li><a href="../profile/profile.html">Profile</a></li>
+        <li><a href="../cart/Cart.html">My Orders</a></li>
+        <li><a href="../contact/contact.html">Help Center</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button class="logout-btn" id="logout-btn">Logout</button>
       </div>
     </div>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-    <div class="profile-content">
-      <!-- Personal Information Section -->
-      <section class="profile-section">
-        <div class="section-header">
-          <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
-          <button class="edit-btn" id="edit-personal-info">Edit</button>
-        </div>
-        <div class="section-content">
-          <div class="info-grid">
-            <div class="info-item">
-              <label>Full Name</label>
-              <p id="user-fullname">Loading...</p>
-            </div>
-            <div class="info-item">
-              <label>Email</label>
-              <p id="user-email">Loading...</p>
-            </div>
-            <div class="info-item">
-              <label>Phone</label>
-              <p id="user-phone">Loading...</p>
-            </div>
-            <div class="info-item">
-              <label>Date of Birth</label>
-              <p id="user-dob">Loading...</p>
-            </div>
-            <div class="info-item">
-              <label>Address</label>
-              <p id="user-address">Loading...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Allergy Profile Section -->
-      <section class="profile-section">
-        <div class="section-header">
-          <h2><i class="fas fa-allergies"></i> Allergy Profile</h2>
-          <button class="edit-btn" id="edit-allergies">Manage</button>
-        </div>
-        <div class="section-content">
-          <div class="allergy-tags" id="allergy-tags-container">
-            <p>No allergies specified</p>
-          </div>
-          <p class="allergy-note">
-            Your allergy profile helps us recommend safe products and alert
-            you about potential allergens.
+    <!-- Main Profile Content -->
+    <main class="profile-container">
+      <div class="profile-header">
+        <div class="profile-info-container">
+          <h1 id="profile-name">Loading...</h1>
+          <p class="member-since">
+            Member since <span id="join-date">...</span>
           </p>
         </div>
-      </section>
-
-      <!-- Order History Section -->
-      <section class="profile-section">
-        <div class="section-header">
-          <h2><i class="fas fa-history"></i> Order History</h2>
-          <button class="view-all-btn" id="view-all-orders">View All</button>
+        <div class="profile-stats">
+          <div class="stat-card">
+            <div class="stat-value" id="total-orders">0</div>
+            <div class="stat-label">Total Orders</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="loyalty-points">0</div>
+            <div class="stat-label">Loyalty Points</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="allergies-count">0</div>
+            <div class="stat-label">Allergies</div>
+          </div>
         </div>
-        <div class="section-content">
-          <div class="order-history" id="order-history-container">
-            <div class="empty-orders">
-              <i class="fas fa-shopping-cart"></i>
-              <p>You haven't placed any orders yet</p>
-              <a href="../products/products.html" class="btn">Start Shopping</a>
+      </div>
+
+      <div class="profile-content">
+        <!-- Personal Information Section -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+            <button class="edit-btn" id="edit-personal-info">Edit</button>
+          </div>
+          <div class="section-content">
+            <div class="info-grid">
+              <div class="info-item">
+                <label>Full Name</label>
+                <p id="user-fullname">Loading...</p>
+              </div>
+              <div class="info-item">
+                <label>Email</label>
+                <p id="user-email">Loading...</p>
+              </div>
+              <div class="info-item">
+                <label>Phone</label>
+                <p id="user-phone">Loading...</p>
+              </div>
+              <div class="info-item">
+                <label>Date of Birth</label>
+                <p id="user-dob">Loading...</p>
+              </div>
+              <div class="info-item">
+                <label>Address</label>
+                <p id="user-address">Loading...</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Saved Payment Methods -->
-      <section class="profile-section">
-        <div class="section-header">
-          <h2><i class="fas fa-credit-card"></i> Payment Methods</h2>
-          <button class="add-btn" id="add-payment-method">Add New</button>
-        </div>
-        <div class="section-content">
-          <div class="payment-methods" id="payment-methods-container">
-            <p>No saved payment methods</p>
+        <!-- Allergy Profile Section -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2><i class="fas fa-allergies"></i> Allergy Profile</h2>
+            <button class="edit-btn" id="edit-allergies">Manage</button>
           </div>
-        </div>
-      </section>
-    </div>
-  </main>
+          <div class="section-content">
+            <div class="allergy-tags" id="allergy-tags-container">
+              <p>No allergies specified</p>
+            </div>
+            <p class="allergy-note">
+              Your allergy profile helps us recommend safe products and alert
+              you about potential allergens.
+            </p>
+          </div>
+        </section>
 
-  <footer>
-    <div class="footer-wave"></div>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="../home/Homepage.html">Home</a></li>
-          <li><a href="../products/products.html">Products</a></li>
-          <li><a href="../about/about.html">About Us</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
-        </ul>
+        <!-- Order History Section -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2><i class="fas fa-history"></i> Order History</h2>
+            <button class="view-all-btn" id="view-all-orders">View All</button>
+          </div>
+          <div class="section-content">
+            <div class="order-history" id="order-history-container">
+              <div class="empty-orders">
+                <i class="fas fa-shopping-cart"></i>
+                <p>You haven't placed any orders yet</p>
+                <a href="../products/products.html" class="btn"
+                  >Start Shopping</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Saved Payment Methods -->
+        <section class="profile-section">
+          <div class="section-header">
+            <h2><i class="fas fa-credit-card"></i> Payment Methods</h2>
+            <button class="add-btn" id="add-payment-method">Add New</button>
+          </div>
+          <div class="section-content">
+            <div class="payment-methods" id="payment-methods-container">
+              <p>No saved payment methods</p>
+            </div>
+          </div>
+        </section>
       </div>
-      
-      <div class="footer-col">
-        <h4>Customer Service</h4>
-        <ul>
-          <li><a href="../help/faq.html">FAQ</a></li>
-          <li><a href="../help/shipping.html">Shipping Policy</a></li>
-          <li><a href="../help/returns.html">Return Policy</a></li>
-          <li><a href="../help/privacy.html">Privacy Policy</a></li>
-          <li><a href="../help/terms.html">Terms of Service</a></li>
-        </ul>
+    </main>
+
+    <footer>
+      <div class="footer-wave"></div>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="../products/products.html">Products</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../contact/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="../profile/profile.html">My Profile</a></li>
+            <li><a href="../profile/profile.html">Order History</a></li>
+            <li><a href="../profile/profile.html">Wishlist</a></li>
+            <li><a href="../profile/profile.html">Account Settings</a></li>
+            <li><a href="../contact/contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+            <li><a href="mailto:info@safebites.com">info@safebites.com</a></li>
+            <li>123 Allergy-Free St, Foodville</li>
+            <li>Open 9AM-6PM Mon-Fri</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="footer-col">
-        <h4>My Account</h4>
-        <ul>
-          <li><a href="../profile/profile.html">My Profile</a></li>
-          <li><a href="../cart/Cart.html">Order History</a></li>
-          <li><a href="../user/wishlist.html">Wishlist</a></li>
-          <li><a href="../user/settings.html">Account Settings</a></li>
-          <li><a href="../newsletter.html">Newsletter</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span class="footer-year">2025</span> SafeBites Market. All
+          rights reserved.
+        </p>
+        <p>Made with ♡ for allergy-conscious consumers</p>
       </div>
-      
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <ul>
-          <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
-          <li><a href="mailto:info@safebites.com">info@safebites.com</a></li>
-          <li>123 Allergy-Free St, Foodville</li>
-          <li>Open 9AM-6PM Mon-Fri</li>
-        </ul>
+    </footer>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal" id="edit-profile-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Edit Profile Information</h2>
+        <form id="profile-edit-form">
+          <div class="form-group">
+            <label for="edit-name">Full Name</label>
+            <input type="text" id="edit-name" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-phone">Phone</label>
+            <input type="tel" id="edit-phone" />
+          </div>
+          <div class="form-group">
+            <label for="edit-dob">Date of Birth</label>
+            <input type="date" id="edit-dob" />
+          </div>
+          <div class="form-group">
+            <label for="edit-address">Address</label>
+            <textarea id="edit-address" rows="3"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="cancel-btn">Cancel</button>
+            <button type="submit" class="save-btn">Save Changes</button>
+          </div>
+        </form>
       </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; <span class="footer-year">2025</span> SafeBites Market. All rights reserved.</p>
-      <p>Made with ♡ for allergy-conscious consumers</p>
-    </div>
-  </footer>
 
-  <!-- Edit Profile Modal -->
-  <div class="modal" id="edit-profile-modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2>Edit Profile Information</h2>
-      <form id="profile-edit-form">
-        <div class="form-group">
-          <label for="edit-name">Full Name</label>
-          <input type="text" id="edit-name" required>
-        </div>
-        <div class="form-group">
-          <label for="edit-email">Email</label>
-          <input type="email" id="edit-email" required>
-        </div>
-        <div class="form-group">
-          <label for="edit-phone">Phone</label>
-          <input type="tel" id="edit-phone">
-        </div>
-        <div class="form-group">
-          <label for="edit-dob">Date of Birth</label>
-          <input type="date" id="edit-dob">
-        </div>
-        <div class="form-group">
-          <label for="edit-address">Address</label>
-          <textarea id="edit-address" rows="3"></textarea>
-        </div>
-        <div class="form-actions">
-          <button type="button" class="cancel-btn">Cancel</button>
-          <button type="submit" class="save-btn">Save Changes</button>
-        </div>
-      </form>
+    <!-- Order Details Modal -->
+    <div class="modal" id="order-details-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="order-details-content"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Order Details Modal -->
-  <div class="modal" id="order-details-modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div id="order-details-content"></div>
+    <!-- Allergy Management Modal -->
+    <div class="modal" id="allergy-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="allergy-modal-content"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Allergy Management Modal -->
-  <div class="modal" id="allergy-modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div id="allergy-modal-content"></div>
+    <!-- Payment Method Modal -->
+    <div class="modal" id="payment-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="payment-modal-content"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Payment Method Modal -->
-  <div class="modal" id="payment-modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div id="payment-modal-content"></div>
-    </div>
-  </div>
-
-  <script src="profile.js"></script>
-</body>
+    <script src="profile.js"></script>
+  </body>
 </html>

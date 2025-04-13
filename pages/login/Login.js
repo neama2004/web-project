@@ -1,10 +1,10 @@
 // DOM Elements
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
-const switchToSignUp = document.getElementById("switch-to-signup");
-const signUpForm = document.querySelector(".sign-up form");
-const signInForm = document.getElementById("signin-form");
+let container = document.getElementById('container');
+let registerBtn = document.getElementById('register');
+let loginBtn = document.getElementById('login');
+let switchToSignUp = document.getElementById("switch-to-signup");
+let signUpForm = document.querySelector(".sign-up form");
+let signInForm = document.getElementById("signin-form");
 
 // Toggle between Sign Up and Sign In forms
 registerBtn.addEventListener('click', () => {
@@ -25,9 +25,9 @@ signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
     // Get form values
-    const name = signUpForm.querySelector("input[type='text']").value.trim();
-    const email = signUpForm.querySelector("input[type='email']").value.trim();
-    const password = signUpForm.querySelector("input[type='password']").value.trim();
+    let name = signUpForm.querySelector("input[type='text']").value.trim();
+    let email = signUpForm.querySelector("input[type='email']").value.trim();
+    let password = signUpForm.querySelector("input[type='password']").value.trim();
 
     // Validate inputs
     if (!name || !email || !password) {
@@ -36,8 +36,8 @@ signUpForm.addEventListener("submit", (e) => {
     }
 
     // Check if email already exists
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const emailExists = users.some(user => user.email.toLowerCase() === email.toLowerCase());
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let emailExists = users.some(user => user.email.toLowerCase() === email.toLowerCase());
     
     if (emailExists) {
         alert("This email is already registered. Please sign in.");
@@ -45,7 +45,7 @@ signUpForm.addEventListener("submit", (e) => {
     }
 
     // Create new user
-    const newUser = {
+    let newUser = {
         name,
         email,
         password,
@@ -67,8 +67,8 @@ signInForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
     // Get form values
-    const email = signInForm.querySelector("input[type='email']").value.trim();
-    const password = signInForm.querySelector("input[type='password']").value.trim();
+    let email = signInForm.querySelector("input[type='email']").value.trim();
+    let password = signInForm.querySelector("input[type='password']").value.trim();
 
     // Validate inputs
     if (!email || !password) {
@@ -77,8 +77,8 @@ signInForm.addEventListener("submit", (e) => {
     }
 
     // Check credentials
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(user => 
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let user = users.find(user => 
         user.email.toLowerCase() === email.toLowerCase() && 
         user.password === password
     );
@@ -95,7 +95,7 @@ signInForm.addEventListener("submit", (e) => {
 });
 
 // Dark Mode Toggle (if exists on page)
-const darkModeToggle = document.getElementById('dark-mode-toggle');
+let darkModeToggle = document.getElementById('dark-mode-toggle');
 if (darkModeToggle) {
     darkModeToggle.addEventListener('change', function() {
         document.body.classList.toggle('dark-mode', this.checked);
@@ -104,7 +104,7 @@ if (darkModeToggle) {
     });
 
     // Check for saved dark mode preference
-    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    let darkModeEnabled = localStorage.getItem('darkMode') === 'true';
     if (darkModeEnabled) {
         document.body.classList.add('dark-mode');
         darkModeToggle.checked = true;

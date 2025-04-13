@@ -172,9 +172,9 @@ function checkout() {
 displayCart();
 
 let cartCount = 0;
-const cartCountElement = document.getElementById("cart-count");
+let cartCountElement = document.getElementById("cart-count");
 
-const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 cartCount = savedCart.reduce((total, item) => total + item.quantity, 0);
 updateCartCount();
 
@@ -186,17 +186,17 @@ function updateCartCount() {
 
 // ===================== Dark Mode Toggle =====================
 // Dark mode toggle functionality
-const darkModeToggle = document.getElementById("dark-mode-toggle");
+let darkModeToggle = document.getElementById("dark-mode-toggle");
 
 // Load saved dark mode preference
 if (darkModeToggle) {
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+  let savedDarkMode = localStorage.getItem("darkMode") === "true";
   darkModeToggle.checked = savedDarkMode;
   document.body.classList.toggle("dark-mode", savedDarkMode);
 
   // Toggle dark mode when checkbox changes
   darkModeToggle.addEventListener("change", function () {
-    const isDarkMode = this.checked;
+    let isDarkMode = this.checked;
     document.body.classList.toggle("dark-mode", isDarkMode);
     localStorage.setItem("darkMode", isDarkMode);
 
@@ -207,7 +207,7 @@ if (darkModeToggle) {
 
 function updateDarkModeElements(isDarkMode) {
   // Update modal for dark mode
-  const modalContent = document.getElementById("modal-content");
+  let modalContent = document.getElementById("modal-content");
   if (modalContent) {
     if (isDarkMode) {
       modalContent.style.backgroundColor = "#0a2a7a";
@@ -219,20 +219,20 @@ function updateDarkModeElements(isDarkMode) {
   }
   
   // Update sidebar
-  const sidebar = document.querySelector(".user-profile-sidebar");
+  let sidebar = document.querySelector(".user-profile-sidebar");
   if (sidebar) {
     sidebar.classList.toggle("dark-mode", isDarkMode);
   }
 }
 
 // ===================== User Profile Sidebar =====================
-const profileTrigger = document.querySelector(".user-profile-trigger");
-const sidebar = document.querySelector(".user-profile-sidebar");
-const overlay = document.createElement("div");
+let profileTrigger = document.querySelector(".user-profile-trigger");
+let sidebar = document.querySelector(".user-profile-sidebar");
+let overlay = document.createElement("div");
 overlay.className = "sidebar-overlay";
 document.body.appendChild(overlay);
-const closeBtn = document.querySelector(".close-sidebar");
-const logoutBtn = document.querySelector(".logout-btn");
+let closeBtn = document.querySelector(".close-sidebar");
+let logoutBtn = document.querySelector(".logout-btn");
 
 // Track sidebar state
 let isSidebarOpen = false;
