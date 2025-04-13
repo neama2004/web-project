@@ -12,8 +12,8 @@
     "id": 2,
     "name": "Muffins",
     "description": "The best sweet and  moist muffins.",
-    "price": 10,
-    "image": "../../images/homeimg/GFMuffins.webp",
+    "price": 7.49,
+    "image": "../../images/images/GFMuffins.webp",
     "quantity": 1,
     "allergyFree": ["Gluten"]
     },
@@ -21,8 +21,8 @@
         "id": 3,
         "name": "Frozen Four Cheese Pizza",
         "description": "Delicious gluten-free pizza with crispy crust",
-        "price":5.69,
-        "image":"../../images/homeimg/GFfrozenpizza.jpg",
+        "price":8.99,
+        "image":"../../images/images/GFfrozenpizza.jpg",
         "quantity": 1,
         "allergyFree":["Gluten"]
     },
@@ -40,7 +40,7 @@
         "name": "Donuts Box",
         "description": "A box full of fluffy, eggless, allergen-free donuts — the sweetest way to stay safe! 🍩",
         "price": 11,
-        "image":"../../images/homeimg/GFDonuts.webp",
+        "image":"../../images/images/GFDonuts.webp",
         "quantity": 1,
         "allergyFree":["Gluten"]
     },
@@ -48,8 +48,8 @@
         "id": 6,
         "name": "CookiesBites",
         "description": "Bite-sized, allergy-friendly cookies — deliciously safe for all ages and diets.",
-        "price": 3.5,
-        "image":"../../images/homeimg/GFCookiesBites.webp",
+        "price": 5.99,
+        "image":"../../images/images/GFCookiesBites.webp",
         "quantity": 1,
         "allergyFree":["Gluten","Dairy","Eggs"]
     },
@@ -147,7 +147,7 @@
         "id": 17,
         "name": "Donuts",
         "description": "A classical soft, fluffy donut .",
-        "price": 1.75,
+        "price": 4.99,
         "image":"../../images/images/egglessdonut.jpg",
         "quantity": 1,
         "allergyFree":["Egg"]
@@ -192,8 +192,8 @@
         "id": 22,
         "name": "Schar Pretzels",
         "description": "Crunchy, delicious, and perfectly salted gluten-free pretzels.",
-        "price": 0.85,
-        "image":"../../images/homeimg/GFpretzels.jpg",
+        "price": 4.49,
+        "image":"../../images/images/GFpretzels.jpg",
         "quantity": 1,
         "allergyFree":["Gluten"] 
     },
@@ -228,8 +228,8 @@
    "id": 26,
     "name": "Eclair",
     "description": "A creamy, indulgent treat — pure joy in every bite!",
-    "price": 5.36,
-    "image":"../../images/homeimg/GFEclair.webp",
+    "price": 6.99,
+    "image":"../../images/images/GFEclair.webp",
     "quantity": 1,
     "allergyFree":["Gluten"] 
    },
@@ -237,8 +237,8 @@
     "id": 27,
      "name": "Chocolate Cake",
      "description": "A creamy, indulgent treat — pure joy in every bite!",
-     "price": 25,
-     "image":"../../images/homeimg/GlutenFreeChocolatecake.webp",
+     "price": 12.99,
+     "image":"../../images/images/GlutenFreeChocolatecake.webp",
      "quantity": 1,
      "allergyFree":["Gluten"] 
     },

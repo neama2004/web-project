@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("You have been logged out");
       toggleSidebar(false);
 
-      window.location.href = 'login.html';
+      window.location.href = "login.html";
     });
   }
 
@@ -126,12 +126,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target.classList.contains("add-to-cart")) {
       e.preventDefault();
       let productElement = e.target.closest(".product");
-      let productId = productElement.dataset.id || Date.now().toString();
+      let productId = productElement.dataset.id;
       let productName = productElement.querySelector("h3").textContent;
       let productPrice = parseFloat(
         productElement.querySelector("p").textContent.replace("$", "")
       );
       let productImage = productElement.querySelector("img").src;
+      let finalImage = productImage.replace(
+        /^.*\/images\/images\//,
+        "../../images/images/"
+      );
       let productCategory = productElement.classList[1] || "uncategorized";
 
       // Add to cart
@@ -139,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         id: productId,
         name: productName,
         price: productPrice,
-        image: productImage,
+        image: finalImage,
         category: productCategory,
         quantity: 1,
       });
@@ -201,52 +205,53 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===================== Product Grid =====================
   let products = [
     {
+      id: 6,
       name: " Cookies Bites",
       price: 5.99,
       category: "gluten-free",
-      image: "../../images/homeimg/GFCookiesBites.webp",
+      image: "../../images/images/GFCookiesBites.webp",
     },
     {
+      id: 17,
       name: " Donuts",
       price: 4.99,
       category: "gluten-free",
-      image: "../../images/homeimg/GFDonuts.webp",
+      image: "../../images/images/GFDonuts.webp",
     },
     {
+      id: 26,
       name: " Eclair",
       price: 6.99,
       category: "gluten-free",
-      image: "../../images/homeimg/GFEclair.webp",
+      image: "../../images/images/GFEclair.webp",
     },
     {
+      id: 3,
       name: " Frozen Pizza",
       price: 8.99,
       category: "gluten-free",
-      image: "../../images/homeimg/GFfrozenPizza.jpg",
+      image: "../../images/images/GFfrozenPizza.jpg",
     },
     {
+      id: 2,
       name: " Muffins",
       price: 7.49,
       category: "gluten-free",
-      image: "../../images/homeimg/GFMuffins.webp",
+      image: "../../images/images/GFMuffins.webp",
     },
     {
+      id: 22,
       name: " Pretzels",
       price: 4.49,
       category: "gluten-free",
-      image: "../../images/homeimg/GFpretzels.jpg",
+      image: "../../images/images/GFpretzels.jpg",
     },
     {
+      id: 27,
       name: " Chocolate Cake",
       price: 12.99,
       category: "gluten-free",
-      image: "../../images/homeimg/GlutenFreeChocolatecake.webp",
-    },
-    {
-      name: " Try Bake Box",
-      price: 15.99,
-      category: "gluten-free",
-      image: "../../images/homeimg/GlutenFreeTryBake box.webp",
+      image: "../../images/images/GlutenFreeChocolatecake.webp",
     },
   ];
 
@@ -263,7 +268,9 @@ document.addEventListener("DOMContentLoaded", function () {
       productElement.className = `product ${product.category}`;
       productElement.dataset.id = product.id;
       productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <img src="../../images/images/${product.image}" alt="${
+        product.name
+      }" loading="lazy">
         <h3>${product.name}</h3>
         <p>$${product.price.toFixed(2)}</p>
         <button class="add-to-cart">Add to Cart</button>

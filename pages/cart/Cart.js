@@ -106,7 +106,7 @@ function displayCart() {
             
         
                 <div class="cart-details" id="total_cart" style="display:flex; align-items:center">\
-                <p>$${item.price * item.quantity}</p>
+                <p>$${(item.price * item.quantity).toFixed(2)}</p>
                 <button class="remove-btn" onclick="removeItem(${index})">🗑️</button>
                 </div>
             

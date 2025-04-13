@@ -688,7 +688,7 @@ input[type="tel"] {
   }
   
   .location img {
-    width: 150%;
+    width: 100%;
     max-height: 300px;
     object-fit: cover;
   }
