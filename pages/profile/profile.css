@@ -500,6 +500,159 @@ nav ul li a:hover {
   gap: 15px;
 }
 
+/* ===================== Allergy Management ===================== */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.allergy-option {
+  position: relative;
+  padding-left: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.allergy-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.allergy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: #EBF4F6;
+  border: 2px solid #d0e8ed;
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.dark-mode .allergy-card {
+  background: #0a2a7a;
+  border-color: #0d3a9a;
+}
+
+.allergy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.allergy-option input[type="checkbox"]:checked + .allergy-card {
+  background: #d0e8ed;
+  border-color: #088395;
+  box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.2);
+}
+
+.dark-mode .allergy-option input[type="checkbox"]:checked + .allergy-card {
+  background: #0d3a9a;
+  border-color: #3caea3;
+  box-shadow: 0 0 0 3px rgba(60, 174, 163, 0.3);
+}
+
+.allergy-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #088395;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .allergy-icon {
+  color: #3caea3;
+}
+
+.allergy-option input[type="checkbox"]:checked + .allergy-card .allergy-icon {
+  transform: scale(1.1);
+  color: #071952;
+}
+
+.dark-mode .allergy-option input[type="checkbox"]:checked + .allergy-card .allergy-icon {
+  color: #EBF4F6;
+}
+
+.allergy-name {
+  font-weight: 600;
+  color: #071952;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .allergy-name {
+  color: #EBF4F6;
+}
+
+.allergy-option input[type="checkbox"]:checked + .allergy-card .allergy-name {
+  color: #088395;
+  font-weight: 700;
+}
+
+.dark-mode .allergy-option input[type="checkbox"]:checked + .allergy-card .allergy-name {
+  color: #3caea3;
+}
+
+.allergy-desc {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+.dark-mode .allergy-desc {
+  color: #ccc;
+}
+
+/* Specific allergy icons */
+.allergy-option.gluten .allergy-icon { color: #d4a017; }
+.allergy-option.dairy .allergy-icon { color: #f8f9fa; }
+.allergy-option.nuts .allergy-icon { color: #8b4513; }
+.allergy-option.peanuts .allergy-icon { color: #d2691e; }
+.allergy-option.soy .allergy-icon { color: #228b22; }
+.allergy-option.eggs .allergy-icon { color: #ffd700; }
+.allergy-option.fish .allergy-icon { color: #1e90ff; }
+.allergy-option.shellfish .allergy-icon { color: #ff6347; }
+
+.allergy-option input[type="checkbox"]:checked + .allergy-card.gluten { background: rgba(212, 160, 23, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.dairy { background: rgba(248, 249, 250, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.nuts { background: rgba(139, 69, 19, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.peanuts { background: rgba(210, 105, 30, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.soy { background: rgba(34, 139, 34, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.eggs { background: rgba(255, 215, 0, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.fish { background: rgba(30, 144, 255, 0.1); }
+.allergy-option input[type="checkbox"]:checked + .allergy-card.shellfish { background: rgba(255, 99, 71, 0.1); }
+
+/* Allergy modal header */
+.allergy-modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.allergy-modal-header h2 {
+  color: #088395;
+  margin-bottom: 10px;
+}
+
+.dark-mode .allergy-modal-header h2 {
+  color: #3caea3;
+}
+
+.allergy-modal-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.dark-mode .allergy-modal-header p {
+  color: #ccc;
+}
+
 /* ===================== Modal Styles ===================== */
 .modal {
   display: none;
