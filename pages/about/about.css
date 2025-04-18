@@ -375,7 +375,7 @@ nav ul li a:hover {
 /* ===================== About Page Specific Styles ===================== */
 #about-header {
   background-image: url(../../images/aboutus_org.jpg);
-  background-size: cover;            /* Makes the image cover the entire header */
+  background-size: cover;            
   background-position: center;      
   background-repeat: no-repeat;      
   
